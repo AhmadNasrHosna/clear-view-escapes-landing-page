@@ -1,0 +1,24 @@
+{
+  "name": "travel-site-workflow-updated",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedhosna95/travel-site-workflow-updated.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmedhosna95/travel-site-workflow-updated/issues"
+  },
+  "homepage": "https://github.com/ahmedhosna95/travel-site-workflow-updated#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1"
+  }
+}
