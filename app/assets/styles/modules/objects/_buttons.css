@@ -1,0 +1,27 @@
+@define-mixin globalButtonStyle {
+  color: #fff;
+  padding: .75rem 1.2rem;
+  display: inline-block;
+}
+
+.o-button {
+  @mixin globalButtonStyle;
+
+  &--orange {
+    @mixin globalButtonStyle;
+    background-color: $mainOrange;
+  }
+
+  &--blue {
+    @mixin globalButtonStyle;
+    background-color: $mainBlue;
+  }
+
+  &--large {
+    padding: 1.1rem 1.9rem;
+
+    @mixin at Small {
+      font-size: 1.25rem;
+    }
+  }
+}

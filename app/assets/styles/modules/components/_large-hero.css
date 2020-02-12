@@ -1,0 +1,48 @@
+.c-section--large-hero {
+  position: relative;
+  border-bottom: 10px solid $mainBlue;
+  
+  &__content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &__title,
+  &__subtitle {
+    font-weight: 300;
+    color: $mainBlue;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+
+    @mixin at Small {
+      font-size: 4.8rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+
+    @mixin at Small {
+      font-size: 2.9rem;
+    }
+  }
+
+  &__description {
+    font-weight: 100;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 0 hsl(0, 0%, 0%, 0.1);
+    margin: 1.85rem auto 2rem;
+    max-width: 30rem;
+
+    @mixin at Small {
+      font-size: 1.875rem;
+    }
+  }
+}
