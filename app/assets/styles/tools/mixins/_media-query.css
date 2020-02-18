@@ -1,0 +1,90 @@
+
+//==============================================================================
+// BREAKPOINTS
+//==============================================================================
+
+$xs-bp   :   575.98px;
+$sm-bp   :      576px;
+$as-bp   :   767.98px;
+$md-bp   :   767.98px;
+$lg-bp   :      992px;
+$xl-bp   :     1200px;
+
+
+@define-mixin bp $breakpoint {
+
+	/**
+	 * Extra small devices (portrait phones, less than 576px)
+	 * NOTE: Declaring the breakpoints (xs/x-small and as/all-small) might not
+	 * be necessary when we go with (Mobile First Design),
+	 * but they are here just in case we have to target it.
+	 *
+	 */
+	
+	@if $breakpoint == xs { 
+		// This breakpoint ENDS at:
+    @media (max-width: $xs-bp) { 
+      @mixin-content;
+    }
+	}
+
+
+	/** 
+	 * Small devices (landscape phones, 576px and up)
+	 */
+
+  @else if $breakpoint == sm {
+		// This breakpoint START from:
+    @media (min-width: $sm-bp) { 
+      @mixin-content;
+    }
+	}
+
+
+	/**
+	 * ALL small devices (portrait/landscape phones: from 0px to 767.98px)
+	 */
+
+	@if $breakpoint == as {  // as == All Small
+		// This breakpoint ENDS at:
+		@media (max-width: $as-bp) { 
+			@mixin-content;
+		}
+	}
+
+
+  /** 
+	 * Medium devices (tablets, 768px and up)
+	 */
+
+	@else if $breakpoint == md {
+		// This breakpoint START from:
+    @media (min-width: $md-bp) { 
+      @mixin-content;
+    }
+	}
+	
+
+	/** 
+	 * Large devices (desktops, 992px and up)
+	 */
+
+  @else if $breakpoint == lg {
+		// this breakpoint START from:
+    @media (min-width: $lg-bp) {
+      @mixin-content;
+    }
+	}
+
+
+	/**
+	 * Extra large devices (large desktops, 1200px and up)
+	 */
+
+  @else $breakpoint == xl {
+		// this breakpoint START from:
+    @media (min-width: $xl-bp) {
+      @mixin-content;
+    }
+  }
+}

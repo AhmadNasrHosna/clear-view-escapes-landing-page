@@ -1,0 +1,20 @@
+/*------------------------------------*  #QUOTES
+\*------------------------------------*/
+/**
+ * Basic styling for quoted text.
+ */
+q {
+  quotes: "‘" "’"; 
+}
+
+  q:before {
+    content: open-quote; 
+  }
+  q:after {
+    content: close-quote; 
+  }
+
+blockquote {
+  quotes: "“" "”";
+
+}

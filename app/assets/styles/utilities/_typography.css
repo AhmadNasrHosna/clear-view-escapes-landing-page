@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+/**
+ * Headings.
+ *
+ * Redefine our heading styles against utility classes. This gives us a double
+ * stranded heading hierarchy whereby we can style one heading as another, e.g.:
+ *
+     <h4 class="u-h1">I am an H4 that is the same size as an H1</h4>
+ *
+ */
+
+.u-t1 { @include font-size($heading-size-1, auto, important); }
+.u-t2 { @include font-size($heading-size-2, auto, important); }
+.u-t3 { @include font-size($heading-size-3, auto, important); }
+.u-t4 { @include font-size($heading-size-4, auto, important); }
+.u-t5 { @include font-size($heading-size-5, auto, important); }
+.u-t6 { @include font-size($heading-size-6, auto, important); }
+
+
+/**
+ * Font Family.
+ */
+
+.u-font-family-sans-serif { font-family: $font-sans-serif }
+.u-font-family-serif      { font-family: $font-serif }
+.u-font-family-monospace  { font-family: $font-monospace }
+
+
+/**
+ * Weights.
+ */
+
+.u-font-weight-100 { font-weight: 100 }
+.u-font-weight-200 { font-weight: 200 }
+.u-font-weight-300 { font-weight: 300 }
+.u-font-weight-400 { font-weight: 400 }
+.u-font-weight-500 { font-weight: 500 }
+.u-font-weight-600 { font-weight: 600 }
+.u-font-weight-700 { font-weight: 700 }
+.u-font-weight-800 { font-weight: 800 }
+.u-font-weight-900 { font-weight: 900 }
+
+
+/**
+ * Font Styles.
+ */
+
+.u-font-style-normal { font-style: normal  }
+.u-font-style-italic { font-style:  italic }
+
+
+/**
+ * Transforms.
+ */
+
+.u-text-transform-uppercase { text-transform: uppercase }
+.u-text-transform-lowercase { text-transform: lowercase }
+.u-text-transform-none      { text-transform:      none }
+
+
+/**
+ * Decorations.
+ */
+
+.u-text-decoration-none      { text-decoration:      none }
+.u-text-decoration-underline { text-decoration: underline }
+.u-text-decoration-wavy      { text-decoration:      wavy }
+
+
+/**
+ * Alignments.
+ */
+
+.u-text-end     { text-align:      end  !important }
+.u-text-start   { text-align: start     !important }
+.u-text-center  { text-align:  center   !important }
+.u-text-justify { text-align: justify   !important }
+
+
+/**
+ * Truncation.
+ *
+ * Cause long spans of text to truncate after running out of horizontal space.
+ */
+.u-text-truncate { @include truncate(100%, important); }

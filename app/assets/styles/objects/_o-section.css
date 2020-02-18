@@ -1,0 +1,86 @@
+.o-section {
+  position: relative;
+
+	padding-block: 4.5rem;
+
+	&--blue {
+		background-color: $mainBlue;
+		color: #fff;
+	}
+
+	&__title, &__subtitle {
+		font-weight: 300;
+
+	}
+
+	&__subtitle--orange {
+		color: $mainOrange;
+	}
+
+	&__subtitle--blue {
+		color: $mainOrange;
+	}
+
+	&__subtitle--white {
+		color: $white;
+	}
+
+  @include bp(medium) {
+    padding: 6.6rem 0 8rem; // heading font size changes
+  }
+
+  @include bp(large) {
+    padding: $section-top-padding-large 0 15rem;
+  }
+
+  &--more-v-spacing {
+    padding: 7.7rem 0 8rem;
+
+    @include bp(medium) {
+      padding-top: 6.6rem; // heading font size changes
+    }
+
+    @include bp(large) {
+      padding: $section-top-padding-large 0 15rem;
+    }
+  }
+
+  &--less-v-spacing {
+    padding: 3rem 0 2rem;
+
+    @include bp(medium) {
+      padding: 4rem 0; // heading font size changes
+    }
+
+    @include bp(large) {
+      padding: $section-top-padding-large 0 6rem;
+    }
+  }
+
+  &--thin {
+    padding: 5rem 0;
+
+    @include bp(large) {
+      padding: 8rem 0;
+    }
+  }
+
+  &--collapse-bottom {
+    padding-bottom: 0;
+  }
+
+  &--gray {
+    background-color: $color-near-white;
+  }
+
+  &--dark,
+  &--black {
+    background-color: $color-true-black;
+    color: $color-bg;
+  }
+
+  &--above-sidebar {
+    z-index: $z-index-above-sidebar;
+  }
+}
+

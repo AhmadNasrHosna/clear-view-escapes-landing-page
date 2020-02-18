@@ -1,0 +1,24 @@
+/* ============================================================================
+   Animations mixins (GLOBAL)
+   ========================================================================= */
+
+/**
+ * Animations mixins for state classes.
+ */
+
+
+
+/* Animate from bottom to top */
+
+@mixin anime-fade-in-bottom-top() {
+  opacity: 0;
+  transform: translate3d(0, rem(30), 0);
+  transition: all $unicorn-g-transition-slow $easeOutSine 0.5s;
+  visibility: hidden;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+}

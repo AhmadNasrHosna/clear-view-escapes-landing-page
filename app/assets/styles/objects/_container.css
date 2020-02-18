@@ -1,0 +1,93 @@
+
+/* ==========================================================================
+   #CONTAINER (GLOBAL)
+   ========================================================================== */
+
+/**
+ * Page-level constraining and wrapping elements.
+ * the outer container for components and it usually provides a fixed width.
+ */
+
+:root {
+  --container-width                  :    1236px;
+  --container-small-width            :    900px;
+  --container-padding                :    18px;
+  --container-small -width-padding   :    14px;
+}
+
+.o-container {
+  padding-inline: $container-padding;
+  margin-inline: auto;
+
+  @media (min-width: 1000px) {
+    width: 100%;
+    max-width: $container-width;
+  }
+	
+}
+
+
+// xFive
+
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
+/**
+ * Page-level constraining and wrapping elements.
+ */
+
+.o-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+
+  padding-left: $wrapper-padding;
+  padding-right: $wrapper-padding;
+
+  &--main {
+    @include bp(large) {
+      padding-left: $wrapper-padding-main;
+      padding-right: 0;
+    }
+  }
+
+  &--big {
+    @include sidebar-width(padding-left);
+  }
+
+  &--big-full {
+    @include sidebar-width(padding-left);
+    padding-right: 0;
+  }
+
+  &--extreme {
+    @include sidebar-width(padding-left);
+
+    @include bp(xlarge) {
+      padding-left: $wrapper-padding;
+    }
+  }
+
+  &--small {
+    max-width: $wrapper-small-width;
+
+    /* Prevent overlapping sidebar on the content */
+    @include bp-only(large) {
+      padding-left: calc(
+        #{$sidebar-large-width} + #{$wrapper-small-width} / 2 - 50%
+      );
+    }
+
+    @include bp(xlarge) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // &--equal-big {
+  //   @include bp(xlarge) {
+  //     padding-left: 7rem;
+  //     padding-right: 7rem;
+  //   }
+  // }
+}
