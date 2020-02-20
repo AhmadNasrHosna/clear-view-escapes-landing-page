@@ -3,19 +3,33 @@
    ========================================================================== */
 
 a {
-  color: inherit;
   text-decoration: none;
-}
 
-a {
-  color: $color-link;
-  text-decoration: none;
+  p & {
+    color: var(--color-link);
+  }
+  
+  &::-moz-selection {
+    background: color-mod(var(--color-link) whiteness(50%));
+    color: #ffffff;
+    text-shadow: none;
+  }
+  
+  &::selection {
+    background: color-mod(var(--color-link) whiteness(50%));
+    color: #ffffff;
+    text-shadow: none;
+  }
 
   &:hover,
   &:active,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: underline;
+    color: var(--color-link-hover);
+    
+    &:not([class]) {
+      text-decoration: underline;
+    }
   }
-}
 
+
+}

@@ -3,35 +3,26 @@
   ========================================================================== */
 
 .o-list {
-  
-/**
- * #LIST-BARE
- * Strip list-like appearance from lists 
- * by removing their bullets and any indentation.
- */
+  /**
+   * #LIST-BARE
+   * Strip list-like appearance from lists 
+   * by removing their bullets and any indentation.
+   */
 
   &--bare {
     margin-left: 0;
     list-style: none;
   }
 
-}
+  /**
+   * #LIST-INLINE
+   * This modifier simply displays a list of items in one line.
+   * [1]: Remove the space between inline block elements
+   * https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+   */
 
-
-/**
- * #LIST-INLINE
- * This modifier simply displays a list of items in one line.
- */
-
-  .o-list--inline {
-
-    li {
-      display: flex;
-      /**
-       * Remove the space between inline block elements
-       * https://css-tricks.com/fighting-the-space-between-inline-block-elements/
-       */
-    }
+  &--inline {
+    display: flex; // [1]
 
     @supports not (display: flex) {
       @mixin clearfix;
@@ -41,3 +32,4 @@
       } /* alternative styles */
     }
   }
+}

@@ -41,7 +41,6 @@
 }
 
 
-
 @supports (display: grid) and (display: flex) {
   [dir=ltr] .pull-start,
   [dir=ltr] .pull-start--atSmall,

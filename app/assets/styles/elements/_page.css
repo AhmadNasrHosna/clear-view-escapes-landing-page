@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    #PAGE
    ========================================================================== */
@@ -6,31 +5,38 @@
 /**
  * Page-level styling (e.g. HTML and BODY elements).
  *
- * 1. Set the default `font-size` and `line-height` for the entire project,
- *    sourced from our default variables. The `font-size` is calculated to exist
- *    in ems, the `line-height` is calculated to exist unitlessly.
- * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ * 1. Set the base `font-size` and default `line-height` for the entire project,
+ *    sourced from our default variables ('setting/_global'). The `font-size` is calculated to exist
+ *    in rems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ï¿½jumpsï¿½ when
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
  * 3. Ensure the page always fills at least the entire height of the viewport.
+ *
+ * 4. The scrolling box scrolls in a smooth fashion.
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
  */
 
+
 html {
-  color: #333;
-  background: white;
-  font-size: ($inuit-global-font-size / 16px) * 1em; /* [1] */
-  font-weight: normal;
-  line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
+  font-size: var(--font-size-base);    /* [1] : 10px */
+  line-height: var(--line-height-lg);  /* [1] */
   overflow-y: scroll; /* [2] */
-  min-height: 100%; /* [3] */
-  min-height: 100vh; /* [3] */
-  scroll-behavior: smooth;
+  min-height: 100%;   /* [3] */
+  min-height: 100vh;  /* [3] */
+
+  scroll-behavior: smooth; /* [4] */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeSpeed;
 }
 
-
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-global);
+  font-size: var(--font-size-global); /* [1] GLOBAL >> output: 1.6rem */
+  font-family: var(--font-family-plain);
+  font-weight: var(--font-weight-global);
+}
 
 
 /*
@@ -44,11 +50,13 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: var(--color-brand-accent);
+  color: #ffffff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: var(--color-brand-accent);
+  color: #ffffff;
   text-shadow: none;
 }

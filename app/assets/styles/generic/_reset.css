@@ -7,14 +7,27 @@
  */
 
 body,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
 hr,
-dl, dd, ol, ul,
-figure, table, address,
-fieldset, legend {
+dl,
+dd,
+ol,
+ul,
+figure,
+table,
+address,
+fieldset,
+legend {
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 body {
@@ -30,8 +43,6 @@ table {
   border-spacing: 0;
 }
 
-
-
 /**
  * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
  *    on fieldsets.
@@ -43,7 +54,6 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-
 
 /**
  * Remove all animations and transitions for people that prefer not to see them.
@@ -57,4 +67,21 @@ fieldset {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============== */
+
+// Dropdown icon fix for IE
+select::-ms-expand {
+  display: none; 
+}
+
+/* 
+ * Applies to inline elements, setting whether the browser should insert
+ * line breaks within an otherwise unbreakable string to prevent text
+ * from overflowing its line box.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
+ */
+* {
+  overflow-wrap: break-word;
 }

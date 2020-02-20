@@ -4,13 +4,18 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const postCSSPlugins = [
   require('postcss-import'),
   require('postcss-mixins'),
-  require('postcss-extend-rule'),
   require('postcss-simple-vars'),
   require('postcss-color-mod-function'),
   require('postcss-conditionals'),
   require('postcss-nested'),
+  require('postcss-extend'),
   require('postcss-logical')(),
-  require('postcss-preset-env')({ stage: 0 })
+  require('postcss-preset-env')({ stage: 0 }),
+  require('postcss-rem')({
+    baseline: 10, // Default to 16
+    fallback: true, // Default to false
+    precision: 6 // Default to 5
+  })
 ];
 
 

@@ -13,38 +13,8 @@
 // `font-size` with a pixel fallback, as well as generating a `line-height` that
 // will sit on our baseline grid.
 
-$inuit-font-size-h1:  36px !default;
-$inuit-font-size-h2:  28px !default;
-$inuit-font-size-h3:  24px !default;
-$inuit-font-size-h4:  20px !default;
-$inuit-font-size-h5:  18px !default;
-$inuit-font-size-h6:  16px !default;
 
-h1 {
-  @include inuit-font-size($inuit-font-size-h1);
-}
-
-h2 {
-  @include inuit-font-size($inuit-font-size-h2);
-}
-
-h3 {
-  @include inuit-font-size($inuit-font-size-h3);
-}
-
-h4 {
-  @include inuit-font-size($inuit-font-size-h4);
-}
-
-h5 {
-  @include inuit-font-size($inuit-font-size-h5);
-}
-
-h6 {
-  @include inuit-font-size($inuit-font-size-h6);
-}
-
-// Heading individual styles
+// Heading mobile individual styles
 h1 {
   font-size: $h1-mobile;
 }
@@ -65,15 +35,7 @@ h5 {
   font-size: $h5-mobile;
 }
 
-@include small-breakpoint {
-
-  // Increased margin on additional headings
-  h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child) {
-    margin-top: 2.5rem;
-  }
-
+@mixin bp md {
   // Heading desktop individual styles
   h1 {
     font-size: $h1;

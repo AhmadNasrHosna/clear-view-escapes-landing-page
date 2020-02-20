@@ -8,13 +8,6 @@
  * the outer container for components and it usually provides a fixed width.
  */
 
-:root {
-  --container-width                  :    1236px;
-  --container-small-width            :    900px;
-  --container-padding                :    18px;
-  --container-small -width-padding   :    14px;
-}
-
 .o-container {
   padding-inline: $container-padding;
   margin-inline: auto;

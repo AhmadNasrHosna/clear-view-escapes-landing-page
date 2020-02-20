@@ -18,7 +18,6 @@
  * 
  */
 
-
 /**
  * Settings.
  *
@@ -27,15 +26,7 @@
  * In this layer is common define the variables that can customize the template.
  */
 
-/*
-@import 'normalize.css';
-@import 'base/_global';
-@import 'base/_variables';
-@import 'base/_mixins';
-*/
-
-// @import 'imports/settings/_color';
-// @import 'imports/settings/_typography';
+@import 'settings/_global';
 
 /**
  * Tools.
@@ -44,9 +35,13 @@
  * NOTE: it is important not to output any CSS in the first 2 layers.
  */
 
-// @import 'imports/tools/_mixins';
+@import "tools/mixins/_breakpoints";
+@import "tools/mixins/_clearfix";
+@import "tools/mixins/_hidden";
+@import "tools/mixins/_truncate";
+@import "tools/mixins/_font-size";
+
 // @import 'imports/tools/_placeholders';
-// @import 'imports/tools/_mq';
 
 /**
  * Generic. or (Vendors things)
@@ -55,6 +50,11 @@
  * This is the first layer which generates actual CSS.
  * Note: The reason these styles are higher up in the structure is so we can override them if needed.
  */
+
+@import "normalize.css";
+@import "generic/_reset";
+@import "generic/_shared";
+@import "generic/_font-face";
 
 /**
  * Elements. (namespace: e-)
@@ -65,15 +65,21 @@
  * NOTE: this is the last layer that styles tag selectors.
  */
 
+@import "elements/_page";
+@import "elements/_links";
+@import "elements/_forms";
+
+
 /**
  * Objects. (namespace: o-)
  *
  * Class-based selectors which define undecorated design patterns,
  * for example, for example media object known from OOCSS such as list, radio-button. The Daniel Fornell’s codepen https://codepen.io/collection/DmzVOM/ shows you a list of objects designed using this architecture.
  * Classes here are loosely named, and typically following the OOCSS methodology. `No cosmetics. Agnostically named (e.g. .ui-list).` - ITCSS author
+ *
  */
 
- //animation with namespace o-
+@import "objects/_lists";
 
 /**
  * Components. (namespace: c-)
@@ -84,8 +90,8 @@
  * Class names here are more specific (must be named explicitly).
  */
 
-//@import 'components/_large-hero';
-//@import 'components/_our-beginning';
+@import "components/_buttons";
+@import "components/_our-beginning";
 //@import 'components/_c-section';
 
 //* Article-head............Article header(tag) styles.
@@ -99,8 +105,8 @@
  * for example, The header would be a pattern because it is not scalable (the header cannot be used in the content or sidebar area) and also contains other components such as buttons, accordions, menus, logos, search form etc
  */
 
- //@import 'imports/patterns/header';
- //@import 'imports/patterns/footer';
+//@import 'imports/patterns/header';
+//@import 'imports/patterns/footer';
 
 /**
  * Scopes. (namespace: s-)
@@ -110,39 +116,21 @@
  * https://gist.github.com/jareware/4738651#1-prefixing-parent-selector-references
  */
 
-
 /**
  * Utilities. (namespace: u-)
  * Utilities and helper classes with ability to override anything else in the triangle.
  * It will most likely come with !important as we are sure to use them.
  * In other words: Each utility class has an !important suffix to max out its specificity. Utility classes are for final adjustments, and should not be overridden by anything that comes before them.
  */
-/*
-@import 'utilities/_background';
-@import 'utilities/_centering';
-@import 'utilities/_display';
-@import 'utilities/_floats';
+
+// @import 'utilities/_background';
+// @import 'utilities/_centering';
+// @import 'utilities/_display';
+// @import 'utilities/_floats';
 @import 'utilities/_headings';
-@import 'utilities/_relative-height';
+// @import 'utilities/_relative-height';
 @import 'utilities/_spacings';
 @import 'utilities/_typography';
 @import 'utilities/_clearfix';
+// @import 'utilities/_showhide';
 @import 'utilities/_print';
-@import 'utilities/_showhide';
-*/
-
-
-:root {
-  --ratio: 1.5;
-  --s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
-  --s-1: calc(var(--s0) / var(--ratio));
-  --s0: 1rem;
-  --s1: calc(var(--s0) * var(--ratio));
-  --s2: calc(var(--s0) * var(--ratio) * var(--ratio));
-  --s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
-  --s4: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-  --s5: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-}

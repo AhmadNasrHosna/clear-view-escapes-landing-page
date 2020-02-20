@@ -1,21 +1,20 @@
-
 //==============================================================================
 // BREAKPOINTS
 //==============================================================================
 
-$xs-bp   :   575.98px;
-$sm-bp   :      576px;
-$as-bp   :   767.98px;
-$md-bp   :   767.98px;
-$lg-bp   :      992px;
-$xl-bp   :     1200px;
+$xs-bp: 575.98px;
+$sm-bp:    576px;
+$as-bp: 767.98px;
+$md-bp:    768px; // Mostly we start from here.
+$lg-bp:    992px;
+$xl-bp:   1200px;
 
 
 @define-mixin bp $breakpoint {
 
 	/**
 	 * Extra small devices (portrait phones, less than 576px)
-	 * NOTE: Declaring the breakpoints (xs/x-small and as/all-small) might not
+	 * NOTE: Declaring the breakpoints (xs[x-small], as[all-small]) might not
 	 * be necessary when we go with (Mobile First Design),
 	 * but they are here just in case we have to target it.
 	 *

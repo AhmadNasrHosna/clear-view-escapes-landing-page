@@ -1,0 +1,125 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+/**
+ * Variables
+ *
+ * The majority of the configuration for the toolkit.
+ */
+
+:root {
+  //==============================================================================
+  // Containers
+  //==============================================================================
+
+  --container-width:    1236px;
+  --container-width-sm:  900px;
+  --container-padding:    18px;
+  --container-padding-sm: 14px;
+
+  //==============================================================================
+  // Global Colors
+  //==============================================================================
+  
+  // Brand colors
+  --color-brand-primary: #2f5572;
+
+  // Accent colors: Accent colors is also known as Secondary colors. Used for used for: Buttons, Selection controls, like sliders and switches Highlighting, selected text, Links and headlines, etc...
+  --color-brand-accent: #d59541;
+
+  // Text colors
+  --color-text-global: #333;
+
+  // Backgrounds colors
+  --color-bg-primary: #fff;
+  --color-bg-secondary: var(--color-brand-primary);
+
+  // Anchors colors
+  --color-link: var(--color-brand-accent);
+  --color-link-hover: color-mod(var(--color-link) whiteness(50%));
+
+  // Forms colors
+  --color-form-legend: #fff;
+  --color-form-legend-bg: #005639;
+  --color-form-label: #002317;
+  --color-form-fieldset-border: #005639;
+  --color-form-border: var(--color-border-global);
+  --color-form-border-hover: color-mod(var(--color-border-global) blackness(20%));
+  --color-form-border-focus: var(--color-brand-accent);
+  --color-form-input-bg: transparent;
+  --color-form-placeholder: color-mod(var(--color-brand-accent) blackness(40%));
+
+  // Borders Colors
+  --color-border-global: #dedede;
+
+  // Tables colors
+  --color-table-stripes: #f8f8f8;
+  --color-table-caption: #ababab;
+
+  // Other
+  --color-highlight: #ffeea8;
+  --color-error: #d33c40;
+  --color-success: #29de7d;
+
+  //==============================================================================
+  // Typography
+  //==============================================================================
+
+  // Modular Scale
+  --ratio: 1.4;
+  --s-6: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
+  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0:  rem(16px);
+  --s1:  calc(var(--s0) * var(--ratio));
+  --s2:  calc(var(--s0) * var(--ratio) * var(--ratio));
+  --s3:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s4:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s5:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  --s6:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  
+  // Font-size
+  --font-size-base: 62.5%;       /* 10px */
+  --font-size-global: rem(16px); /* 1.6rem */
+
+  // Font-weight
+  --font-weight-global: 300;
+
+  // Font-family
+  --font-family-plain: "Inter", system-ui;
+  --font-family-special: "Georgia", serif;
+  --font-family-mono: "Consolas", "Lucida Console", Menlo, Monaco, monospace;
+
+  // Line-height
+  --line-height: var(--ratio);                 // 1.4 (based on ratio number)
+  --line-height-sm: calc(0.8 * var(--ratio));  // 1.12
+  --line-height-lg: calc(1.2 * var(--ratio));  // 1.68
+  --line-height-xl: calc(1.25 * var(--ratio)); // 1.75
+
+  //==============================================================================
+  // Borders
+  //==============================================================================
+
+  --border-width-thin: var(--s-1);
+  --border-width-thick: var(--s-2);
+  --border-style: solid;
+  --border-radius-global: 3px;
+  --border-radius-round: 40px;
+  --border-global: var(--border-width-thin) var(--border-style) var(--color-border-global);
+
+  //==============================================================================
+  // Transitions
+  //==============================================================================
+  
+  --transition-duration: 300ms;
+  --transition-timing-function: ease-in;
+  --transition-global: all var(--transition-duration) var(--transition-timing-function);
+
+}

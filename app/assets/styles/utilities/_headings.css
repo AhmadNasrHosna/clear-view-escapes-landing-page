@@ -7,30 +7,18 @@
  * allow for double stranded heading hierarchy, e.g. we semantically need an H2,
  * but we want it to be sized like an H1:
  *
- *   <h2 class="u-h1"></h2>
+ *   <h2 class="u-s2"></h2>
  *
  */
 
-.u-h1 {
-  @include inuit-font-size($inuit-font-size-h1, $important: true);
-}
+.u-s1 { font-size: var(--s1); }
 
-.u-h2 {
-  @include inuit-font-size($inuit-font-size-h2, $important: true);
-}
+.u-s2 { font-size: var(--s2); }
 
-.u-h3 {
-  @include inuit-font-size($inuit-font-size-h3, $important: true);
-}
+.u-s3 { font-size: var(--s3); }
 
-.u-h4 {
-  @include inuit-font-size($inuit-font-size-h4, $important: true);
-}
+.u-s4 { font-size: var(--s4); }
 
-.u-h5 {
-  @include inuit-font-size($inuit-font-size-h5, $important: true);
-}
+.u-s5 { font-size: var(--s5); }
 
-.u-h6 {
-  @include inuit-font-size($inuit-font-size-h6, $important: true);
-}
+.u-s6 { font-size: var(--s6); }

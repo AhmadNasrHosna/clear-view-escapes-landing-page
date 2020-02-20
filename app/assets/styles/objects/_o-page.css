@@ -3,7 +3,6 @@
    ========================================================================= */
 
 
-
 /**
  * the first element after BODY.
  * the most outer container which usually contains max-width: 100vw and overflow: hidden.
@@ -86,7 +85,3 @@ body {
   // }
 }
 
-
-
-// WEBPACK FOOTER //
-// ./src/styles/src/styles/imports/objects/_page.scss

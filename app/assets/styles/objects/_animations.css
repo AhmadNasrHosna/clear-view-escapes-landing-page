@@ -1,0 +1,9 @@
+/* ==========================================================================
+   #ANIMATIONS (GLOBAL)
+   ========================================================================== */
+
+/**
+ * NOTE[1]: Generic, global animations as objects, eg. @keyframes o-fade-in in file _objects/animations.css
+ * NOTE[2]: Component specific animations should be defined in respective components files, eg. @keyframes c-hero-scale in components/_hero.css.
+ */
+

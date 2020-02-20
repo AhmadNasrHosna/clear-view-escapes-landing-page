@@ -8,76 +8,99 @@
  * Redefine our heading styles against utility classes. This gives us a double
  * stranded heading hierarchy whereby we can style one heading as another, e.g.:
  *
-     <h4 class="u-h1">I am an H4 that is the same size as an H1</h4>
+    <h4 class="u-h1">I am an H4 that is the same size as an H1</h4>
  *
  */
 
-.u-t1 { @include font-size($heading-size-1, auto, important); }
-.u-t2 { @include font-size($heading-size-2, auto, important); }
-.u-t3 { @include font-size($heading-size-3, auto, important); }
-.u-t4 { @include font-size($heading-size-4, auto, important); }
-.u-t5 { @include font-size($heading-size-5, auto, important); }
-.u-t6 { @include font-size($heading-size-6, auto, important); }
+/* .u-s1 { font-size: var(--s1); }
+
+.u-s2 { font-size: var(--s2); }
+
+.u-s3 { font-size: var(--s3); }
+
+.u-s4 { font-size: var(--s4); }
+
+.u-s5 { font-size: var(--s5); }
+
+.u-s6 { font-size: var(--s6); } */
 
 
 /**
- * Font Family.
+ * Font Family. 
  */
 
-.u-font-family-sans-serif { font-family: $font-sans-serif }
-.u-font-family-serif      { font-family: $font-serif }
-.u-font-family-monospace  { font-family: $font-monospace }
+.u-ff-sans-serif { font-family: var(--ff-sans-serif) } // sans-serif
+
+.u-ff-serif      { font-family: var(--ff-serif)      } // serif
+
+.u-ff-monospace  { font-family: var(--ff-monospace)  } // monospace
 
 
 /**
  * Weights.
  */
 
-.u-font-weight-100 { font-weight: 100 }
-.u-font-weight-200 { font-weight: 200 }
-.u-font-weight-300 { font-weight: 300 }
-.u-font-weight-400 { font-weight: 400 }
-.u-font-weight-500 { font-weight: 500 }
-.u-font-weight-600 { font-weight: 600 }
-.u-font-weight-700 { font-weight: 700 }
-.u-font-weight-800 { font-weight: 800 }
-.u-font-weight-900 { font-weight: 900 }
+.u-fw-100 { font-weight: 100 }
+
+.u-fw-200 { font-weight: 200 }
+
+.u-fw-300 { font-weight: 300 }
+
+.u-fw-400 { font-weight: 400 }
+
+.u-fw-500 { font-weight: 500 }
+
+.u-fw-600 { font-weight: 600 }
+
+.u-fw-700 { font-weight: 700 }
+
+.u-fw-800 { font-weight: 800 }
+
+.u-fw-900 { font-weight: 900 }
 
 
 /**
  * Font Styles.
  */
 
-.u-font-style-normal { font-style: normal  }
-.u-font-style-italic { font-style:  italic }
+.u-fs-normal { font-style: normal  }
+
+.u-fs-italic { font-style:  italic }
 
 
 /**
  * Transforms.
  */
 
-.u-text-transform-uppercase { text-transform: uppercase }
-.u-text-transform-lowercase { text-transform: lowercase }
-.u-text-transform-none      { text-transform:      none }
+.u-tt-uppercase { text-transform: uppercase }
+
+.u-tt-lowercase { text-transform: lowercase }
+
+.u-tt-none      { text-transform:      none }
 
 
 /**
  * Decorations.
  */
 
-.u-text-decoration-none      { text-decoration:      none }
-.u-text-decoration-underline { text-decoration: underline }
-.u-text-decoration-wavy      { text-decoration:      wavy }
+.u-td-none      { text-decoration:      none }
+
+.u-td-underline { text-decoration: underline }
+
+.u-td-wavy      { text-decoration:      wavy }
 
 
 /**
  * Alignments.
  */
 
-.u-text-end     { text-align:      end  !important }
-.u-text-start   { text-align: start     !important }
-.u-text-center  { text-align:  center   !important }
-.u-text-justify { text-align: justify   !important }
+.u-ta-end     { text-align:      end  !important }
+
+.u-ta-start   { text-align: start     !important }
+
+.u-ta-center  { text-align:  center   !important }
+
+.u-ta-justify { text-align: justify   !important }
 
 
 /**
@@ -85,4 +108,17 @@
  *
  * Cause long spans of text to truncate after running out of horizontal space.
  */
-.u-text-truncate { @include truncate(100%, important); }
+
+.u-text-truncate { @mixin truncate 100%; }
+
+/**
+ * Word-Wrap: 
+ *
+ * Force Text to Wrap
+ */
+
+.u-word-wrap {
+	overflow-wrap: break-word;
+	word-break: break-all;
+	word-wrap: break-word;
+}

@@ -7,7 +7,6 @@
  */
 
 
-
 /* Animate from bottom to top */
 
 @mixin anime-fade-in-bottom-top() {

@@ -1,13 +1,16 @@
-@define-mixin truncate($limit: 100%, $important: false) {
+///* ========================================================================
+//   #TRUNCATION
+//   ======================================================================== */
 
-    @if ($important == "important") {
-        $important: unquote("!important");
-    } @else {
-        $important: null;
-    }
+/**
+ * Truncation.
+ *
+ * Cause long spans of text to truncate after running out of horizontal space.
+ */
 
-    max-width: $limit $important;
-    white-space: nowrap $important;
-    overflow: hidden $important;
-    text-overflow: ellipsis $important;
+@define-mixin truncate $limit: 100%, $i {
+  max-width     :     $limit;
+  white-space   :     nowrap;
+  overflow      :     hidden;
+  text-overflow :   ellipsis;
 }

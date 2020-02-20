@@ -2,7 +2,6 @@
    #CLEARFIX
    ========================================================================== */
 
-
 /*
 * Clearfix: contain floats
 *
@@ -22,19 +21,14 @@
 *    `:before` to contain the top-margins of child elements.
 */
 
-
-
-
 @define-mixin clearfix {
-
-  &:before, 
+  &:before,
   &:after {
-    content: " ";     /* 1 */
-    display: table;   /* 2 */
+    content: " ";   // [1]
+    display: table; // [2]
   }
 
   &:after {
-    clear: both;
+    clear: both; 
   }
-
 }

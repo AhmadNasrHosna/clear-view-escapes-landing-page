@@ -1,20 +1,34 @@
-/*------------------------------------*  #QUOTES
-\*------------------------------------*/
+/* ==========================================================================
+   #QUOTES
+   ========================================================================== */
+
 /**
  * Basic styling for quoted text.
  */
+
 q {
-  quotes: "‘" "’"; 
+  quotes: "ï¿½" "ï¿½";
+
+  &:before {
+    content: open-quote;
+  }
+  
+  &:after {
+    content: close-quote;
+  }
 }
 
-  q:before {
-    content: open-quote; 
-  }
-  q:after {
-    content: close-quote; 
-  }
-
 blockquote {
-  quotes: "“" "”";
+  quotes: "ï¿½" "ï¿½";
+  margin: 0 0 rem(24px) 0;
+  border-left: #f0f0f0;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
 
+  cite {
+    display: block;
+    margin-top: rem(24px);
+    font-size: 1rem;
+    text-align: right;
+  }
 }
