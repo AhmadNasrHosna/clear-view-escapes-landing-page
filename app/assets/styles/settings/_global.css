@@ -12,46 +12,47 @@
  */
 
 :root {
+
   //==============================================================================
   // Containers
   //==============================================================================
 
-  --container-width:    1236px;
-  --container-width-sm:  900px;
-  --container-padding:    18px;
+  --container-width     : 1236px;
+  --container-width-sm  : 900px;
+  --container-padding   : 18px;
   --container-padding-sm: 14px;
 
   //==============================================================================
   // Global Colors
   //==============================================================================
-  
+
   // Brand colors
   --color-brand-primary: #2f5572;
 
   // Accent colors: Accent colors is also known as Secondary colors. Used for used for: Buttons, Selection controls, like sliders and switches Highlighting, selected text, Links and headlines, etc...
-  --color-brand-accent: #d59541;
+  --color-brand-accent : #d59541;
 
   // Text colors
-  --color-text-global: #333;
+  --color-text-global  : #333;
 
   // Backgrounds colors
-  --color-bg-primary: #fff;
-  --color-bg-secondary: var(--color-brand-primary);
+  --color-background-light: #fff;
+  --color-background-dark : var(--color-brand-primary);
 
   // Anchors colors
-  --color-link: var(--color-brand-accent);
-  --color-link-hover: color-mod(var(--color-link) whiteness(50%));
+  --color-link         : var(--color-brand-accent);
+  --color-link-hover   : color-mod(var(--color-link) whiteness(50%));
 
   // Forms colors
-  --color-form-legend: #fff;
-  --color-form-legend-bg: #005639;
-  --color-form-label: #002317;
-  --color-form-fieldset-border: #005639;
-  --color-form-border: var(--color-border-global);
-  --color-form-border-hover: color-mod(var(--color-border-global) blackness(20%));
-  --color-form-border-focus: var(--color-brand-accent);
-  --color-form-input-bg: transparent;
-  --color-form-placeholder: color-mod(var(--color-brand-accent) blackness(40%));
+  --color-form-legend            : #fff;
+  --color-form-legend-bg         : #005639;
+  --color-form-label             : #002317;
+  --color-form-fieldset-border   : #005639;
+  --color-form-border-color      : var(--color-border-global);
+  --color-form-border-hover-color: color-mod(var(--color-border-global) blackness(20%));
+  --color-form-border-focus      : var(--color-brand-accent);
+  --color-form-focus-shaddow     : color-mod(var(--color-brand-accent) whiteness(50%));
+  --color-form-placeholder-color : color-mod(var(--color-brand-accent) blackness(40%));
 
   // Borders Colors
   --color-border-global: #dedede;
@@ -62,8 +63,8 @@
 
   // Other
   --color-highlight: #ffeea8;
-  --color-error: #d33c40;
-  --color-success: #29de7d;
+  --color-error    : #d33c40;
+  --color-success  : #29de7d;
 
   //==============================================================================
   // Typography
@@ -84,42 +85,40 @@
   --s4:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
   --s5:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
   --s6:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-  
+
   // Font-size
-  --font-size-base: 62.5%;       /* 10px */
-  --font-size-global: rem(16px); /* 1.6rem */
+  --font-size-base     : 62.5%;       /* 10px */
+  --font-size-global   : rem(16px); /* 1.6rem */
 
   // Font-weight
-  --font-weight-global: 300;
+  --font-weight-global : 300;
 
   // Font-family
-  --font-family-plain: "Inter", system-ui;
+  --font-family-plain  : "Inter", system-ui;
   --font-family-special: "Georgia", serif;
-  --font-family-mono: "Consolas", "Lucida Console", Menlo, Monaco, monospace;
+  --font-family-mono   : "Consolas", "Lucida Console", Menlo, Monaco, monospace;
 
   // Line-height
-  --line-height: var(--ratio);                 // 1.4 (based on ratio number)
-  --line-height-sm: calc(0.8 * var(--ratio));  // 1.12
-  --line-height-lg: calc(1.2 * var(--ratio));  // 1.68
-  --line-height-xl: calc(1.25 * var(--ratio)); // 1.75
+  --line-height        : var(--ratio);                 // 1.4 (based on ratio number)
+  --line-height-sm     : calc(0.8 * var(--ratio));  // 1.12
+  --line-height-lg     : calc(1.2 * var(--ratio));  // 1.68
+  --line-height-xl     : calc(1.25 * var(--ratio)); // 1.75
 
   //==============================================================================
   // Borders
   //==============================================================================
 
-  --border-width-thin: var(--s-1);
-  --border-width-thick: var(--s-2);
-  --border-style: solid;
+  --border-width-thin   : var(--s-1);
+  --border-width-thick  : var(--s-2);
+  --border-style        : solid;
   --border-radius-global: 3px;
-  --border-radius-round: 40px;
-  --border-global: var(--border-width-thin) var(--border-style) var(--color-border-global);
+  --border-global       : var(--border-width-thin) var(--border-style) var(--color-border-global);
 
   //==============================================================================
   // Transitions
   //==============================================================================
-  
-  --transition-duration: 300ms;
-  --transition-timing-function: ease-in;
-  --transition-global: all var(--transition-duration) var(--transition-timing-function);
 
+  --transition-duration-global   : 300ms;
+  --transition-timing-func-global: ease-out;
+  --transition-global            : all var(--transition-duration-global) var(--transition-timing-func-global);
 }

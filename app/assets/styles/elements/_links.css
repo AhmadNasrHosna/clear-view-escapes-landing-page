@@ -5,7 +5,7 @@
 a {
   text-decoration: none;
 
-  p & {
+  p &, article &, span & {
     color: var(--color-link);
   }
   
@@ -24,12 +24,9 @@ a {
   &:hover,
   &:active,
   &:focus {
-    color: var(--color-link-hover);
-    
     &:not([class]) {
       text-decoration: underline;
+      color: var(--color-link-hover);
     }
   }
-
-
 }

@@ -30,10 +30,6 @@ legend {
   padding: 0;
 }
 
-body {
-  font-family: system-ui;
-}
-
 /**
  * Remove default table spacing.
  */
@@ -73,10 +69,10 @@ fieldset {
 
 // Dropdown icon fix for IE
 select::-ms-expand {
-  display: none; 
+  display: none;
 }
 
-/* 
+/*
  * Applies to inline elements, setting whether the browser should insert
  * line breaks within an otherwise unbreakable string to prevent text
  * from overflowing its line box.

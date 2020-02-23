@@ -1,0 +1,46 @@
+:root {
+  --space-o-section-p-vertical: rem(19px 0 19px 0);
+  --space-o-section-p-vertical-more: rem(72px 0 72px 0);
+}
+
+.o-section {
+  padding: var(--space-o-section-p-vertical);
+
+  @mixin bp md { padding: var(--space-o-section-p-vertical-big) }
+
+  &--dark {
+    background-color: var(-color-background-dark);
+    color: #fff;
+  }
+
+  &__title {
+    font-size: var(--s4);
+
+    strong { font-weight: 700 }
+  }
+
+	&__title, &__subtitle {
+		font-weight: 300;
+	}
+
+	&__subtitle--accent-color {
+		color: var(--color-brand-accent);
+	}
+
+	&__subtitle--primary-color {
+		color: var(--color-brand-accent);
+	}
+
+	&__subtitle--white {
+		color: #fff;
+	}
+
+  &--more-v-spacing {
+
+  }
+
+  &--less-v-spacing {
+
+  }
+}
+

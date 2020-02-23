@@ -15,7 +15,7 @@
  * This helps the CSS specificity:
  * https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
  *
- * 
+ *
  */
 
 /**
@@ -54,12 +54,13 @@
 @import "normalize.css";
 @import "generic/_reset";
 @import "generic/_shared";
+@import "generic/_box-sizing";
 @import "generic/_font-face";
 
 /**
  * Elements. (namespace: e-)
  *
- * Styling for bare HTML elements (unclassed html elements) 
+ * Styling for bare HTML elements (unclassed html elements)
  * e.g. headings, lists, tables, images, links, buttons
  * These come with default styling from the browser so we can redefine them here.
  * NOTE: this is the last layer that styles tag selectors.
@@ -80,6 +81,8 @@
  */
 
 @import "objects/_lists";
+@import "objects/_section";
+
 
 /**
  * Components. (namespace: c-)
@@ -92,11 +95,6 @@
 
 @import "components/_buttons";
 @import "components/_our-beginning";
-//@import 'components/_c-section';
-
-//* Article-head............Article header(tag) styles.
-//* Article-foot............Article footer styles.
-// if we have animation here // will be inside the component file with namespace c- e.g. @keyframes c-hero-scale
 
 /**
  * Patterns. (namespace: p-)
@@ -105,7 +103,7 @@
  * for example, The header would be a pattern because it is not scalable (the header cannot be used in the content or sidebar area) and also contains other components such as buttons, accordions, menus, logos, search form etc
  */
 
-//@import 'imports/patterns/header';
+@import 'patterns/_hero';
 //@import 'imports/patterns/footer';
 
 /**
@@ -134,3 +132,4 @@
 @import 'utilities/_clearfix';
 // @import 'utilities/_showhide';
 @import 'utilities/_print';
+

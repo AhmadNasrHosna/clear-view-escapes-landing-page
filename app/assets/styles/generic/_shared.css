@@ -41,8 +41,15 @@ video {
 input,
 select,
 textarea,
-button {
-  color: inherit;
+.c-button {
+  appearance: none;
   font: inherit;
   letter-spacing: inherit;
+  outline: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }

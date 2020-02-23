@@ -3,85 +3,84 @@
 //==============================================================================
 
 $xs-bp: 575.98px;
-$sm-bp:    576px;
+$sm-bp: 576px;
 $as-bp: 767.98px;
-$md-bp:    768px; // Mostly we start from here.
-$lg-bp:    992px;
-$xl-bp:   1200px;
-
+$md-bp: 768px; // Mostly we start from here.
+$lg-bp: 992px;
+$xl-bp: 1200px;
 
 @define-mixin bp $breakpoint {
 
-	/**
-	 * Extra small devices (portrait phones, less than 576px)
-	 * NOTE: Declaring the breakpoints (xs[x-small], as[all-small]) might not
-	 * be necessary when we go with (Mobile First Design),
-	 * but they are here just in case we have to target it.
-	 *
-	 */
-	
-	@if $breakpoint == xs { 
-		// This breakpoint ENDS at:
-    @media (max-width: $xs-bp) { 
+  @if $breakpoint == xs {
+
+		/**
+		 * Extra small devices (portrait phones, less than 576px)
+		 * NOTE: Declaring the breakpoints (xs[x-small], as[all-small]) might not
+		 * be necessary when we go with (Mobile First Design),
+		 * but they are here just in case we have to target it.
+		 * This breakpoint ENDS at $xs-bp
+		 */
+
+    @media (max-width: $xs-bp) {
       @mixin-content;
     }
-	}
-
-
-	/** 
-	 * Small devices (landscape phones, 576px and up)
-	 */
+  }
 
   @else if $breakpoint == sm {
-		// This breakpoint START from:
-    @media (min-width: $sm-bp) { 
+
+		/**
+		 * Small devices (landscape phones, 576px and up)
+		 * This breakpoint START from $sm-bp
+		 */
+
+    @media (min-width: $sm-bp) {
       @mixin-content;
     }
 	}
 
+	@else if $breakpoint == as {
 
-	/**
-	 * ALL small devices (portrait/landscape phones: from 0px to 767.98px)
-	 */
+		/**
+		 * ALL small devices (portrait/landscape phones: from 0px to 767.98px)
+		 * This breakpoint START from $as-bp
+		 */
 
-	@if $breakpoint == as {  // as == All Small
-		// This breakpoint ENDS at:
-		@media (max-width: $as-bp) { 
-			@mixin-content;
-		}
+    @media (max-width: $as-bp) {
+      @mixin-content;
+    }
 	}
-
-
-  /** 
-	 * Medium devices (tablets, 768px and up)
-	 */
 
 	@else if $breakpoint == md {
-		// This breakpoint START from:
-    @media (min-width: $md-bp) { 
+
+		/**
+		 * Medium devices (tablets, 768px and up)
+		 * This breakpoint START from $md-bp
+		 */
+
+    @media (min-width: $md-bp) {
       @mixin-content;
     }
 	}
-	
 
-	/** 
-	 * Large devices (desktops, 992px and up)
-	 */
+	@else if $breakpoint == lg {
 
-  @else if $breakpoint == lg {
-		// this breakpoint START from:
+		/**
+		 * Large devices (desktops, 992px and up)
+		 * This breakpoint START from $lg-bp
+		 */
+
     @media (min-width: $lg-bp) {
       @mixin-content;
     }
 	}
 
+	@else $breakpoint == xl {
 
-	/**
-	 * Extra large devices (large desktops, 1200px and up)
-	 */
+		/**
+		 * Extra large devices (large desktops, 1200px and up)
+		 * This breakpoint START from $xl-bp
+		 */
 
-  @else $breakpoint == xl {
-		// this breakpoint START from:
     @media (min-width: $xl-bp) {
       @mixin-content;
     }

@@ -31,7 +31,7 @@ textarea;
   border-radius: var(--border-radius-global);
   padding: 0.75rem;
   outline: none;
-  background: var(--color-form-input-bg);
+  background: transparent;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   width: 100%;
@@ -48,7 +48,7 @@ textarea;
 %forms-focus {
   border: 1px solid var(--color-form-border-focus);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1),
-    0 0 6px lighten(var(--color-link), 30%);
+    0 0 6px --color-form-shaddow-focus;
 }
 
 // Input fields on success

@@ -28,6 +28,7 @@ html {
   scroll-behavior: smooth; /* [4] */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
 }
 
 body {

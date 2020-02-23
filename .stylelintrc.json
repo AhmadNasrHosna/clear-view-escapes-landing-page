@@ -16,6 +16,7 @@
           "extends",
           "at-root",
           "define-mixin",
+          "define-placeholder",
           "/^my-/i",
           "content",
           "debug",
