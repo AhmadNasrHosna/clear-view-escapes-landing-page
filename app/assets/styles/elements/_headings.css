@@ -13,29 +13,39 @@
 // `font-size` with a pixel fallback, as well as generating a `line-height` that
 // will sit on our baseline grid.
 
+h1, h2, h3, h4, h5, h6 {
+  @mixin bp as {
+    line-height: var(--line-height-sm);
+  }
+}
 
 // Heading mobile individual styles
-h1 {
-  font-size: $h1-mobile;
+
+/* h1 {
+  font-size: var(--s6);
 }
 
 h2 {
-  font-size: $h2-mobile;
+  font-size: var(--s5);
 }
 
 h3 {
-  font-size: $h3-mobile;
+  font-size: var(--s4);
 }
 
 h4 {
-  font-size: $h4-mobile;
+  font-size: var(--s3);
 }
 
 h5 {
-  font-size: $h5-mobile;
+  font-size: var(--s2);
 }
 
-@mixin bp md {
+h6 {
+  font-size: var(--s1);
+} */
+
+/* @mixin bp md {
   // Heading desktop individual styles
   h1 {
     font-size: $h1;
@@ -56,4 +66,4 @@ h5 {
   h5 {
     font-size: $h5;
   }
-}
+} */

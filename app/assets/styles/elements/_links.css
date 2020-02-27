@@ -2,31 +2,32 @@
    #LINKS
    ========================================================================== */
 
+// Mixin for Link selection styles
+@define-mixin link-selection-styles {
+  background: color-mod(var(--color-link) whiteness(50%));
+  color: #ffffff;
+  text-shadow: none;
+}
+
 a {
   text-decoration: none;
 
-  p &, article &, span & {
-    color: var(--color-link);
-  }
-  
-  &::-moz-selection {
-    background: color-mod(var(--color-link) whiteness(50%));
-    color: #ffffff;
-    text-shadow: none;
-  }
-  
-  &::selection {
-    background: color-mod(var(--color-link) whiteness(50%));
-    color: #ffffff;
-    text-shadow: none;
-  }
+  &::-moz-selection { @mixin link-selection-styles; }
 
-  &:hover,
-  &:active,
-  &:focus {
-    &:not([class]) {
-      text-decoration: underline;
-      color: var(--color-link-hover);
+  &::selection      { @mixin link-selection-styles; }
+
+  p &,
+  article &,
+  span & { // https://stuffandnonsense.co.uk/blog/using-multiple-not-selectors
+    &:not([class*="c-button"]) {
+      color: var(--color-link);
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+        color: var(--color-link-hover);
+      }
     }
   }
 }

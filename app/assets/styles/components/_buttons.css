@@ -50,17 +50,18 @@
   // Button base styles
   min-width       : rem(100px);
   display         : inline-block;
-  vertical-align  : middle;
   text-align      : center;
   cursor          : pointer;
   line-height     : 1;
-  margin          : 0;
   padding         : var(--space-btn-base-padding);
   border-radius   : var(--brs-btn-base);
   font-weight     : var(--font-btn-base-weight);
   font-family     : var(--font-btn-base-family);
   border          : var(--border-btn-base-width) var(--border-btn-base-style) transparent;
-  transition      : all var(--transition-duration-global) var(--transition-timing-func-global), transform 0ms ease;
+  transition      :
+    box-shadow       var(--transition-duration-global),
+    background-color var(--transition-duration-global)
+                    var(--transition-timing-func-global);
 
 
   // Button on active
@@ -98,6 +99,14 @@
 
     &:focus {
       box-shadow        : 0 0 0 4px var(--color-btn-accent-focus-shadow);
+    }
+
+    &-shadow {
+      box-shadow        : 0 8px 15px rgba(0, 0, 0, .15);
+
+      &:focus {
+        box-shadow      : 0 0 0 4px var(--color-btn-accent-focus-shadow), 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
     }
   }
 

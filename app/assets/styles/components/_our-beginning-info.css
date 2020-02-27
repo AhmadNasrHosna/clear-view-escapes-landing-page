@@ -1,0 +1,15 @@
+.c-our-beginning-media {
+  @mixin bp md { display: flex; }
+
+  &__img {
+    width: 33.333%;
+    flex-basis: 33.3333%;
+  }
+
+  &__content {
+    --flow-space: var(--s2);
+
+    flex: 1;
+    margin-left: var(--s4);
+  }
+}

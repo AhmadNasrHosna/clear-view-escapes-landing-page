@@ -37,9 +37,7 @@
 
 @import "tools/mixins/_breakpoints";
 @import "tools/mixins/_clearfix";
-@import "tools/mixins/_hidden";
-@import "tools/mixins/_truncate";
-@import "tools/mixins/_font-size";
+@import "tools/mixins/_effects";
 
 // @import 'imports/tools/_placeholders';
 
@@ -69,6 +67,15 @@
 @import "elements/_page";
 @import "elements/_links";
 @import "elements/_forms";
+@import "elements/_headings";
+@import "elements/_paragraphs";
+
+/**
+ * Layouts. (namespace: l-)
+ *
+ */
+
+ @import "layouts/_flow";
 
 
 /**
@@ -80,8 +87,10 @@
  *
  */
 
+@import "objects/_container";
 @import "objects/_lists";
 @import "objects/_section";
+@import "objects/_media";
 
 
 /**
@@ -94,7 +103,7 @@
  */
 
 @import "components/_buttons";
-@import "components/_our-beginning";
+@import "components/_our-beginning-info";
 
 /**
  * Patterns. (namespace: p-)
@@ -104,7 +113,7 @@
  */
 
 @import 'patterns/_hero';
-//@import 'imports/patterns/footer';
+@import 'patterns/_footer';
 
 /**
  * Scopes. (namespace: s-)
@@ -129,7 +138,8 @@
 // @import 'utilities/_relative-height';
 @import 'utilities/_spacings';
 @import 'utilities/_typography';
+@import 'utilities/_colors';
 @import 'utilities/_clearfix';
+@import 'utilities/_effects';
 // @import 'utilities/_showhide';
 @import 'utilities/_print';
-

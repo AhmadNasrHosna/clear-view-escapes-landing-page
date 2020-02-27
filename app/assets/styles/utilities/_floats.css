@@ -1,14 +1,4 @@
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-  
-  @supports (display: grid) and (display: flex) { display: none }
-}
-
-
-.pull-start { 
+.u-pull-start {
   float: inline-start;
 
   &--atSmall {
@@ -24,7 +14,7 @@
   }
  }
 
-.pull-end { 
+.u-pull-end {
   float: inline-end;
 
   &--atSmall {
@@ -51,7 +41,7 @@
   [dir=rtl] .pull-start--atSmall,
   [dir=rtl] .pull-start--atMedium,
   [dir=rtl] .pull-start--atLarge,
-  
+
   [dir=ltr] .pull-end,
   [dir=ltr] .pull-end--atSmall,
   [dir=ltr] .pull-end--atMedium,

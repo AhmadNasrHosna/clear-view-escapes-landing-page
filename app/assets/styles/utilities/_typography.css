@@ -12,7 +12,7 @@
  *
  */
 
-/* .u-s1 { font-size: var(--s1); }
+.u-s1 { font-size: var(--s1); }
 
 .u-s2 { font-size: var(--s2); }
 
@@ -22,11 +22,11 @@
 
 .u-s5 { font-size: var(--s5); }
 
-.u-s6 { font-size: var(--s6); } */
+.u-s6 { font-size: var(--s6); }
 
 
 /**
- * Font Family. 
+ * Font Family.
  */
 
 .u-ff-sans-serif { font-family: var(--ff-sans-serif) } // sans-serif
@@ -94,25 +94,54 @@
  * Alignments.
  */
 
-.u-ta-end     { text-align:      end  !important }
+.u-align-end     { text-align:      end }
 
-.u-ta-start   { text-align: start     !important }
+.u-align-start   { text-align: start    }
 
-.u-ta-center  { text-align:  center   !important }
+.u-align-center  { text-align:  center  }
 
-.u-ta-justify { text-align: justify   !important }
-
+.u-align-justify { text-align: justify  }
 
 /**
- * Truncation.
- *
- * Cause long spans of text to truncate after running out of horizontal space.
+ * Letter Spacing
+ */
+.u-ls-015   { letter-spacing: var(--letter-spacing-015)   }
+
+.u-ls-025   { letter-spacing: var(--letter-spacing-025)   }
+
+.u-ls-04    { letter-spacing: var(--letter-spacing-04)    }
+
+.u-ls-n-015 { letter-spacing: var(--letter-spacing-n-015) }
+
+.u-ls-n-025 { letter-spacing: var(--letter-spacing-n-025) }
+
+.u-ls-n-04  { letter-spacing: var(--letter-spacing-n-04)  }
+
+/**
+ * Line-height
  */
 
-.u-text-truncate { @mixin truncate 100%; }
+ .u-lh-xs { line-height: var(--line-height-xs) }
+
+ .u-lh-sm { line-height: var(--line-height-sm) }
+
+ .u-lh-md { line-height: var(--line-height-md) }
+
+ .u-lh-lg { line-height: var(--line-height-lg) }
+
+ .u-lh-xl { line-height: var(--line-height-xl) }
+
 
 /**
- * Word-Wrap: 
+* Truncation.
+*
+* Cause long spans of text to truncate after running out of horizontal space.
+*/
+
+// .u-text-truncate { @mixin truncate 100%; }
+
+/**
+ * Word-Wrap:
  *
  * Force Text to Wrap
  */

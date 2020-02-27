@@ -60,7 +60,7 @@
         ]
       }
     ],
-    "unit-whitelist": ["em", "rem", "s", "%", "px", "vh", "vw", "ms", "deg"]
+    "unit-whitelist": ["em", "rem", "s", "%", "px", "vh", "vw", "ms", "deg", "fr", "ch"]
   },
   "ignoreFiles": ["app/bootstrap/**/*.css"]
 }

@@ -1,7 +1,8 @@
 .p-hero {
 	position: relative;
 	border-bottom: 10px solid var(--color-brand-primary);
-  
+	box-shadow: var(--box-shadow-global);
+
 	&__content {
 		position: absolute;
 		width: 100%;
@@ -9,6 +10,10 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
+
+		& .o-container {
+			--flow-space-all: var(--s3);
+		}
 	}
 
 	&__title,
@@ -18,31 +23,33 @@
 	}
 
 	&__title {
-		font-size: 2.4rem;
+		font-size: calc(var(--s3) - var(--s-3));
+		font-weight: 500;
 
 		@mixin bp md {
-			font-size: 4.8rem;
+			font-size: calc(var(--s4) + var(--s0));
 		}
 	}
 
 	&__subtitle {
-		font-size: 1.5rem;
+		font-size: calc( var(--s1) + var(--s-5) );
+		font-weight: 300;
 
 		@mixin bp md {
-			font-size: 2.9rem;
+			font-size: var(--s3);
 		}
 	}
 
 	&__description {
-		font-weight: 100;
 		color: #ffffff;
-		font-size: 1.1rem;
+		font-weight: 100;
+		font-size: rem(17.6px);
+		margin-inline: auto;
 		text-shadow: 2px 2px 0 hsl(0, 0%, 0%, 0.1);
-		margin: 1.85rem auto 2rem;
-		max-width: 30rem;
 
 		@mixin bp md {
-			font-size: 1.875rem;
+			font-size: calc(var(--s1) + var(--s-3));
+			max-width: rem(480px);
 		}
 	}
 }

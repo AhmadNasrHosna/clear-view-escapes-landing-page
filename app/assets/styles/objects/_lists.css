@@ -5,7 +5,7 @@
 .o-list {
   /**
    * #LIST-BARE
-   * Strip list-like appearance from lists 
+   * Strip list-like appearance from lists
    * by removing their bullets and any indentation.
    */
 
@@ -22,14 +22,12 @@
    */
 
   &--inline {
-    display: flex; // [1]
+    li { display: inline-block; } /* Fallback styles for old browesers */
 
-    @supports not (display: flex) {
-      @mixin clearfix;
+    @supports (display: flex) {
+      display: inline-flex; /* [1] */
 
-      li {
-        float: start;
-      } /* alternative styles */
+      li { display: list-item; }
     }
   }
 }

@@ -1,11 +1,10 @@
-/* ==========================================================================
+/* ===================================================
    #SHARED
-   ========================================================================== */
+   =================================================== */
 
 /**
  * Shared declarations for certain elements.
  */
-
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -28,10 +27,10 @@ iframe,
 img,
 svg,
 video {
-	max-width: 100%; /* [1] */
-	font-style: italic; /* [2] */
-	vertical-align: middle; /* [3] */
-        height: auto;
+  max-width: 100%; /* [1] */
+  font-style: italic; /* [2] */
+  vertical-align: middle; /* [3] */
+  height: auto;
 }
 
 /*
@@ -41,10 +40,15 @@ video {
 input,
 select,
 textarea,
-.c-button {
+button {
   appearance: none;
   font: inherit;
-  letter-spacing: inherit;
+}
+
+input,
+select,
+textarea,
+.c-button {
   outline: none;
 
   &:hover,

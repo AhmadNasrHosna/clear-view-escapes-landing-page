@@ -1,16 +1,25 @@
-:root {
-  --space-o-section-p-vertical: rem(19px 0 19px 0);
-  --space-o-section-p-vertical-more: rem(72px 0 72px 0);
-}
+
 
 .o-section {
-  padding: var(--space-o-section-p-vertical);
+  padding: var(--s5) 0;
+  background-color: #fff;
 
-  @mixin bp md { padding: var(--space-o-section-p-vertical-big) }
+  @mixin bp md { padding: var(--s6) 0; }
 
-  &--dark {
-    background-color: var(-color-background-dark);
-    color: #fff;
+  .c-icon--inline {
+    position: relative;
+    top: rem(-20px);
+
+    & + * {
+      display: inline-block;
+      margin-left: var(--s0);
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    color: var(--color-brand-primary);
+    font-weight: 200;
   }
 
   &__title {
@@ -19,28 +28,36 @@
     strong { font-weight: 700 }
   }
 
-	&__title, &__subtitle {
-		font-weight: 300;
-	}
+  &__subtitle {
+    margin-top: var(--s1);
 
-	&__subtitle--accent-color {
-		color: var(--color-brand-accent);
-	}
-
-	&__subtitle--primary-color {
-		color: var(--color-brand-accent);
-	}
-
-	&__subtitle--white {
-		color: #fff;
-	}
-
-  &--more-v-spacing {
-
+    strong { font-weight: 500 }
   }
 
-  &--less-v-spacing {
 
+  // Dark section styles:
+
+  &--dark {
+    background-color: var(--color-brand-primary);
+    color: #fff;
+  }
+
+  &--dark &__title { color: #fff }
+
+
+  // Headings of Our beginning section:
+
+  &--our-beginning &__title {
+    font-size: var(--s3);
+
+    strong { font-weight: 500 }
+   }
+
+  &--our-beginning &__subtitle {
+    font-size: calc(var(--s1) + var(--s-3));
+    max-width: 50rem;
+    margin-inline: auto;
+    color: var(--color-brand-accent);
   }
 }
 

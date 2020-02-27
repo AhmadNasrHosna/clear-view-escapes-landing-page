@@ -17,10 +17,10 @@
   // Containers
   //==============================================================================
 
-  --container-width     : 1236px;
-  --container-width-sm  : 900px;
-  --container-padding   : 18px;
-  --container-padding-sm: 14px;
+  --container-width-sm    :    90rem;
+  --container-padding-h-sm:   1.4rem;
+  --container-width-lg    : 123.6rem;
+  --container-padding-h-lg:   1.8rem;
 
   //==============================================================================
   // Global Colors
@@ -87,11 +87,8 @@
   --s6:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
 
   // Font-size
-  --font-size-base     : 62.5%;       /* 10px */
-  --font-size-global   : rem(16px); /* 1.6rem */
-
-  // Font-weight
-  --font-weight-global : 300;
+  --font-size-base     : 62.5%;                   /* 10px */
+  --font-size-global   : rem(17px); /* 1.6rem */
 
   // Font-family
   --font-family-plain  : "Inter", system-ui;
@@ -99,10 +96,19 @@
   --font-family-mono   : "Consolas", "Lucida Console", Menlo, Monaco, monospace;
 
   // Line-height
-  --line-height        : var(--ratio);                 // 1.4 (based on ratio number)
-  --line-height-sm     : calc(0.8 * var(--ratio));  // 1.12
-  --line-height-lg     : calc(1.2 * var(--ratio));  // 1.68
-  --line-height-xl     : calc(1.25 * var(--ratio)); // 1.75
+  --line-height-xs: calc(0.7 * var(--ratio));  // 1.12
+  --line-height-sm: calc(0.9 * var(--ratio));  // 1.12
+  --line-height-md: var(--ratio);              // 1.4 (based on ratio number)
+  --line-height-lg: calc(1.2 * var(--ratio));  // 1.68
+  --line-height-xl: calc(1.25 * var(--ratio)); // 1.75
+
+  // Letter-spacing
+  --letter-spacing-015  :  .015em;
+  --letter-spacing-025  :  .025em;
+  --letter-spacing-04   :   .04em;
+  --letter-spacing-n-015: -.015em;
+  --letter-spacing-n-025: -.025em;
+  --letter-spacing-n-04 :  -.04em;
 
   //==============================================================================
   // Borders
@@ -121,4 +127,11 @@
   --transition-duration-global   : 300ms;
   --transition-timing-func-global: ease-out;
   --transition-global            : all var(--transition-duration-global) var(--transition-timing-func-global);
+
+  //==============================================================================
+  // Transitions
+  //==============================================================================
+
+  --box-shadow-global: 0 3px 7px rgba(0, 0, 0, .2);
+
 }

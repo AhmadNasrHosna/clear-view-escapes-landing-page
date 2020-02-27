@@ -78,6 +78,7 @@ select::-ms-expand {
  * from overflowing its line box.
  * https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
  */
+
 * {
   overflow-wrap: break-word;
 }

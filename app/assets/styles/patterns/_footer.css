@@ -1,0 +1,14 @@
+.p-footer {
+  background-color: var(--color-brand-primary);
+  color: #fff;
+  padding: var(--s1) 0;
+
+  &__copyrights-text {
+    font-weight: 200;
+    font-size: calc(var(--font-size-global) - .1rem);
+
+    [class*=c-button] {
+      margin-left: var(--s1);
+    }
+  }
+}

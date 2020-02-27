@@ -19,24 +19,22 @@
 
 
 html {
-  font-size: var(--font-size-base);    /* [1] : 10px */
-  line-height: var(--line-height-lg);  /* [1] */
-  overflow-y: scroll; /* [2] */
-  min-height: 100%;   /* [3] */
-  min-height: 100vh;  /* [3] */
+  font-size  : var(--font-size-base);  /* [1] : 10px */
+  line-height: var(--line-height-md);  /* [1] */
+  overflow-y : scroll; /* [2] */
+  min-height : 100%;   /* [3] */
+  min-height : 100vh;  /* [3] */
 
-  scroll-behavior: smooth; /* [4] */
-  -webkit-font-smoothing: antialiased;
+  scroll-behavior        : smooth; /* [4] */
+  -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
-  word-wrap: break-word;
 }
 
 body {
-  background: var(--color-bg-primary);
-  color: var(--color-text-global);
-  font-size: var(--font-size-global); /* [1] GLOBAL >> output: 1.6rem */
+  background : var(--color-bg-primary);
+  color      : var(--color-text-global);
+  font-size  : var(--font-size-global); /* [1] GLOBAL >> output: 1.6rem */
   font-family: var(--font-family-plain);
-  font-weight: var(--font-weight-global);
 }
 
 
@@ -51,13 +49,13 @@ body {
  */
 
 ::-moz-selection {
-  background: var(--color-brand-accent);
-  color: #ffffff;
+  background : var(--color-brand-accent);
+  color      : #ffffff;
   text-shadow: none;
 }
 
 ::selection {
-  background: var(--color-brand-accent);
-  color: #ffffff;
+  background : var(--color-brand-accent);
+  color      : #ffffff;
   text-shadow: none;
 }
