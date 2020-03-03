@@ -1,13 +1,6 @@
 //==============================================================================
-// BREAKPOINTS
+// BREAKPOINTS Mixins
 //==============================================================================
-
-$xs-bp: 57.598rem;
-$sm-bp: 57.6rem;
-$as-bp: 76.798rem;
-$md-bp: 76.8rem; // Mostly we start from here.
-$lg-bp: 9.92rem;
-$xl-bp: 120rem;
 
 @define-mixin bp $breakpoint {
 
@@ -21,7 +14,7 @@ $xl-bp: 120rem;
 		 * This breakpoint ENDS at $xs-bp
 		 */
 
-    @media (max-width: $xs-bp) {
+    @media (max-width: $bp-xs) {
       @mixin-content;
     }
   }
@@ -33,7 +26,7 @@ $xl-bp: 120rem;
 		 * This breakpoint START from $sm-bp
 		 */
 
-    @media (min-width: $sm-bp) {
+    @media (min-width: $bp-sm) {
       @mixin-content;
     }
 	}
@@ -45,7 +38,7 @@ $xl-bp: 120rem;
 		 * This breakpoint START from $as-bp
 		 */
 
-    @media (max-width: $as-bp) {
+    @media (max-width: $bp-as) {
       @mixin-content;
     }
 	}
@@ -57,7 +50,7 @@ $xl-bp: 120rem;
 		 * This breakpoint START from $md-bp
 		 */
 
-    @media (min-width: $md-bp) {
+    @media (min-width: $bp-md) {
       @mixin-content;
     }
 	}
@@ -69,7 +62,7 @@ $xl-bp: 120rem;
 		 * This breakpoint START from $lg-bp
 		 */
 
-    @media (min-width: $lg-bp) {
+    @media (min-width: $bp-lg) {
       @mixin-content;
     }
 	}
@@ -81,7 +74,7 @@ $xl-bp: 120rem;
 		 * This breakpoint START from $xl-bp
 		 */
 
-    @media (min-width: $xl-bp) {
+    @media (min-width: $bp-xl) {
       @mixin-content;
     }
   }

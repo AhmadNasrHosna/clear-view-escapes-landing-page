@@ -14,13 +14,22 @@
 :root {
 
   //==============================================================================
+  // BREAKPOINTS Mixins
+  //==============================================================================
+
+  $bp-xs: 35.99875em; // 1em == 16px
+  $bp-sm: 36em;
+  $bp-as: 47.99875em;
+  $bp-md: 48em; // Mostly we start from here.
+  $bp-lg: 62em;
+  $bp-xl: 75em;
+
+  //==============================================================================
   // Containers
   //==============================================================================
 
-  --container-width-sm    :    90rem;
-  --container-padding-h-sm:   1.4rem;
-  --container-width-lg    : 123.6rem;
-  --container-padding-h-lg:   1.8rem;
+  --container-width    :  rem(900px); @media (min-width: $bp-md) {
+  --container-width    : rem(1236px); }
 
   //==============================================================================
   // Global Colors
@@ -71,36 +80,43 @@
   //==============================================================================
 
   // Modular Scale
-  --ratio: 1.4;
-  --s-6: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
-  --s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
-  --s-1: calc(var(--s0) / var(--ratio));
-  --s0:  rem(16px);
-  --s1:  calc(var(--s0) * var(--ratio));
-  --s2:  calc(var(--s0) * var(--ratio) * var(--ratio));
-  --s3:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
-  --s4:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-  --s5:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-  --s6:  calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+  --ratio: 1.4; // The ratio number
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1:  calc(var(--s0) / var(--ratio));
+  // --s0 is the base scale size (Mobile First Aproach)
+  --s0:  rem(10.5px);   @media (min-width: $bp-sm) {
+  --s0:  rem(12.5px); } @media (min-width: $bp-sm) {
+  --s0:    rem(14px); } @media (min-width: $bp-sm) {
+  --s0:    rem(16px); }
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
 
   // Font-size
-  --font-size-base     : 62.5%;                   /* 10px */
-  --font-size-global   : rem(17px); /* 1.6rem */
+  --font-size-base     : 62.5%; // 10px
+  --font-size-global: rem(15px);   @media (min-width: $bp-sm) {
+  --font-size-global: rem(16px); } @media (min-width: $bp-md) {
+  --font-size-global: rem(17px); }
 
   // Font-family
   --font-family-plain  : "Inter", system-ui;
-  --font-family-special: "Georgia", serif;
+  --font-family-special: "bluu_nextbold_italic", serif;
   --font-family-mono   : "Consolas", "Lucida Console", Menlo, Monaco, monospace;
 
   // Line-height
-  --line-height-xs: calc(0.7 * var(--ratio));  // 1.12
-  --line-height-sm: calc(0.9 * var(--ratio));  // 1.12
-  --line-height-md: var(--ratio);              // 1.4 (based on ratio number)
-  --line-height-lg: calc(1.2 * var(--ratio));  // 1.68
-  --line-height-xl: calc(1.25 * var(--ratio)); // 1.75
+  --line-height: 1.4;
+  --line-height-xs: calc(0.7 * var(--line-height));  // 1.12
+  --line-height-sm: calc(0.85715 * var(--line-height));  // 1.2
+  --line-height-md:             var(--line-height);  // 1.4 (based on ratio number)
+  --line-height-lg: calc(1.2 * var(--line-height));  // 1.68
+  --line-height-xl: calc(1.25 * var(--line-height)); // 1.75
 
   // Letter-spacing
   --letter-spacing-015  :  .015em;
@@ -134,4 +150,12 @@
 
   --box-shadow-global: 0 3px 7px rgba(0, 0, 0, .2);
 
+  //==============================================================================
+  // Z-index
+  //==============================================================================
+
+  --zi-header: 2;
+  --zi-popover: 4;
+  --zi-fixed-element: 5;
+  --zi-overlay: 10; // modals and dialogs
 }

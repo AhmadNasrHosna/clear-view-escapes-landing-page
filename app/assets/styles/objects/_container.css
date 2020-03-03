@@ -7,14 +7,9 @@
  * the outer container for components and it usually provides a fixed width.
  */
 
- .o-container {
+.o-container {
   width: 100%;
-  max-width: var(--container-width-sm);
-  padding: 0 var(--container-padding-h-sm);
+  max-width: var(--container-width);
+  padding: 0 var(--s1);
   margin: 0 auto;
-
-  @mixin bp lg {
-    max-width: var(--container-width-lg);
-    padding: 0 var(--container-padding-h-lg);
-  }
 }

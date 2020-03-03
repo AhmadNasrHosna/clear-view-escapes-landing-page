@@ -1,0 +1,64 @@
+:root { --testimonial-avatar-width: rem(160px); } // local variable for .l-testimonials
+
+.c-testimonial {
+  background: color-mod(var(--color-brand-accent) lightness(98%));
+  border: rem(6px) solid var(--color-brand-accent);
+  box-shadow: 0 rem(2px 5px) 0 rgba(0, 0, 0, 0.3), 0 rem(8px 15px) 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+
+  &__title, &__subtitle {
+    text-align: center;
+    color: var(--color-brand-primary);
+  }
+
+  &__title {
+    font-size: var(--s3); @mixin bp md {
+    font-size: var(--s2); }
+    font-family: var(--font-family-special);
+  }
+
+  &__subtitle {
+    font-size: rem(15px);
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: var(--testimonial-avatar-width);
+    height: var(--testimonial-avatar-width);
+    background: #fff;
+    position: absolute;
+    top: calc(var(--testimonial-avatar-width) * -.50);
+    left: calc(50% + (var(--testimonial-avatar-width) * -.50));
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 rem(6px) var(--color-brand-accent),0 0 0 rem(6px) var(--color-brand-accent),0 .375rem .375rem 0 rgba(0,0,0,.4),0 .5625rem 1.125rem 0 rgba(0,0,0,.35);
+  }
+
+  &__subtitle,
+  &__text {
+    font-weight: 400;
+  }
+
+  &__text {
+    --flow-space-p-to-h: calc(var(--s5) + var(--s-1)); @mixin bp sm {
+    --flow-space-p-to-h: var(--s5); } @mixin bp md {
+    --flow-space-p-to-h: calc(var(--s4) + var(--s-1)); } @mixin bp lg {
+    --flow-space-p-to-h: var(--s4); }
+
+    @mixin bp md { font-size: rem(16px); }
+    position: relative;
+
+    &:before {
+      --svg-width: rem(90px);
+      content: '';
+      display: block;
+      position: absolute;
+      top: rem(-72px);
+      left: calc(50% - (var(--svg-width)/2));
+      width: var(--svg-width);
+      height: var(--svg-width);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='300' width='300' fill='%23d59541' viewBox='0 0 90 90'%3E%3Cpath d='M309.006 88.725c-.239 0-.479-.057-.698-.172l-7.174-3.772-7.174 3.772a1.502 1.502 0 01-2.177-1.582l1.371-7.987-5.804-5.657a1.5 1.5 0 01.831-2.559l8.021-1.165 3.587-7.269a1.498 1.498 0 012.69 0l3.587 7.269 8.021 1.165a1.5 1.5 0 01.831 2.559l-5.804 5.657 1.371 7.987a1.5 1.5 0 01-1.479 1.754zm-7.872-7.139c.24 0 .479.058.698.172l5.182 2.725-.99-5.769a1.5 1.5 0 01.432-1.328l4.191-4.086-5.793-.842a1.5 1.5 0 01-1.129-.82l-2.591-5.25-2.591 5.25a1.5 1.5 0 01-1.129.82l-5.793.842 4.191 4.086a1.5 1.5 0 01.432 1.328l-.99 5.769 5.182-2.725c.218-.114.458-.172.698-.172zM287.104 69.473h-17.99a1.5 1.5 0 010-3h17.99a1.5 1.5 0 010 3zM283.611 75.147h-8.33a1.5 1.5 0 010-3h8.33a1.5 1.5 0 010 3zM286.869 80.271h-4.717a1.5 1.5 0 010-3h4.717a1.5 1.5 0 010 3zM333.669 69.473h-17.99a1.5 1.5 0 010-3h17.99a1.5 1.5 0 010 3zM327.501 75.147h-8.33a1.5 1.5 0 010-3h8.33a1.5 1.5 0 010 3zM320.63 80.271h-4.717a1.5 1.5 0 010-3h4.717a1.5 1.5 0 010 3zM54.814 61.149c-.315 0-.632-.074-.921-.227l-9.469-4.979-9.47 4.979a1.98 1.98 0 01-2.872-2.088l1.81-10.544-7.661-7.468a1.98 1.98 0 011.097-3.377l10.587-1.538 4.734-9.595a1.98 1.98 0 013.551 0l4.734 9.595 10.587 1.538a1.977 1.977 0 011.098 3.377l-7.661 7.468 1.811 10.544a1.983 1.983 0 01-1.955 2.315zm-10.39-9.422c.317 0 .632.075.921.227l6.84 3.597-1.307-7.614a1.985 1.985 0 01.568-1.753l5.533-5.394-7.646-1.111a1.975 1.975 0 01-1.489-1.083l-3.42-6.93-3.42 6.93a1.98 1.98 0 01-1.49 1.083l-7.647 1.111 5.532 5.394c.467.454.68 1.109.571 1.753l-1.308 7.614 6.84-3.597c.29-.152.604-.227.922-.227zM25.904 35.737H2.157a1.98 1.98 0 010-3.96h23.748a1.98 1.98 0 01-.001 3.96zM21.294 43.228H10.298a1.98 1.98 0 010-3.96h10.996a1.98 1.98 0 010 3.96zM25.594 49.99h-6.226a1.98 1.98 0 010-3.959h6.226a1.98 1.98 0 110 3.959zM87.371 35.737H63.623a1.98 1.98 0 010-3.96h23.748a1.98 1.98 0 010 3.96zM79.229 43.228H68.232a1.98 1.98 0 010-3.96h10.996a1.98 1.98 0 01.001 3.96zM70.158 49.99h-6.226a1.98 1.98 0 010-3.959h6.226a1.98 1.98 0 110 3.959z'/%3E%3C/svg%3E%0A");    background-size: var(--svg-width) var(--svg-width);
+      z-index: -1;
+    }
+  }
+}

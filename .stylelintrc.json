@@ -2,6 +2,8 @@
   "extends": "stylelint-config-recommended",
 
   "rules": {
+
+    "function-calc-no-invalid": true,
     "property-no-unknown": [
       true,
       {

@@ -1,0 +1,101 @@
+.c-features {
+  /* === Layout fallback for old browsers === */
+  margin-right: -25px;
+  @mixin clearfix;
+  /* === */
+
+  /* === Layout fallback override === */
+  @supports (display: grid) {
+    margin-right: 0;
+    @mixin clearfix-override;
+  /* === */
+
+    display: grid;
+    grid-gap: var( --s1); @mixin bp xs {
+    grid-gap: var( --s3); }
+
+    @mixin bp sm {
+      grid-template-columns: repeat(auto-fit, minmax(rem(250px), 1fr));
+    }
+  }
+}
+
+.c-feature {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: -118px; left: -32px; @mixin bp md {
+    top: -192px; left:   3px; }
+    font-size: calc(var(--s6) * 4);
+    font-weight: 700;
+    line-height: 1;
+    color: hsla(0, 0%, 100%, .03);
+    z-index: -1;
+  }
+
+  &:nth-of-type(1):before { content: "w"; }
+
+  &:nth-of-type(2):before { content: "G"; }
+
+  &:nth-of-type(3):before { content: "w"; }
+
+  &:nth-of-type(4):before { content: "s"; }
+
+  /* === Layout fallback for old browsers === */
+  &:not(:last-child) { margin-bottom: rem(25px); }
+
+  @mixin bp md   {
+    width: calc(50% - 25px);
+    float: inline-start;
+    margin-right: 25px;
+    height: 340px;
+  }
+  /* === */
+
+  /* === Layout fallback override === */
+  @supports (display: grid) {
+    &:not(:last-child) { margin-bottom: 0; }
+
+    @mixin bp md {
+      width: auto;
+      float: none;
+      margin-right: 0;
+      height: auto;
+    }
+  }
+  /* === */
+
+  padding: rem(30px 20px);
+  border-radius: 12px;
+  background: linear-gradient(45deg, #2a4d67, #325b7a);
+  box-shadow: 20px -20px 60px #284861,
+              -20px 20px 60px #366283;
+  text-align: center;
+
+  &__title {
+    font-size: var(--s2);
+    font-weight: 300;
+    line-height: var(--line-height-sm);
+    font-family: var(--font-family-special);
+    @mixin bp md { letter-spacing: var(--letter-spacing-n-04); }
+  }
+
+  &__desc {
+  /* === Layout fallback for old browsers === */
+  @mixin bp md   { font-size: rem(15px);}
+  /* === */
+
+  /* === Layout fallback override === */
+  @supports (display: grid) {
+    @mixin bp md   { font-size: initial;}
+  }
+  /* === */
+
+    font-weight: 200;
+    text-align: start;
+  }
+}

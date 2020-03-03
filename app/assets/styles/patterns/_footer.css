@@ -7,8 +7,14 @@
     font-weight: 200;
     font-size: calc(var(--font-size-global) - .1rem);
 
+    @mixin bp as {
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+
     [class*=c-button] {
-      margin-left: var(--s1);
+      margin: var(--s1) 0 0 0;
+      @mixin bp md { margin: 0 0 0 var(--s1); }
     }
   }
 }

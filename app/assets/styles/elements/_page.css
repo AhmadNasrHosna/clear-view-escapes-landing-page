@@ -8,33 +8,29 @@
  * 1. Set the base `font-size` and default `line-height` for the entire project,
  *    sourced from our default variables ('setting/_global'). The `font-size` is calculated to exist
  *    in rems, the `line-height` is calculated to exist unitlessly.
- * 2. Force scrollbars to always be visible to prevent awkward �jumps� when
- *    navigating between pages that do/do not have enough content to produce
- *    scrollbars naturally.
- * 3. Ensure the page always fills at least the entire height of the viewport.
  *
- * 4. The scrolling box scrolls in a smooth fashion.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ *
+ * 3. The scrolling box scrolls in a smooth fashion.
  *    https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior
  */
 
-
 html {
   font-size  : var(--font-size-base);  /* [1] : 10px */
-  line-height: var(--line-height-md);  /* [1] */
-  overflow-y : scroll; /* [2] */
-  min-height : 100%;   /* [3] */
-  min-height : 100vh;  /* [3] */
-
-  scroll-behavior        : smooth; /* [4] */
-  -webkit-font-smoothing : antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background : var(--color-bg-primary);
   color      : var(--color-text-global);
-  font-size  : var(--font-size-global); /* [1] GLOBAL >> output: 1.6rem */
+  line-height: var(--line-height-md);  /* [1] */
+  font-size  : rem(16px); // fallback font size for all screens
+  font-size  : var(--font-size-global); /* [1] */
   font-family: var(--font-family-plain);
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  min-height: 100vh;  /* [2] */
+  scroll-behavior: smooth; /* [3] */
 }
 
 
@@ -48,14 +44,16 @@ body {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
+@define-mixin page-selection-styles {
   background : var(--color-brand-accent);
   color      : #ffffff;
   text-shadow: none;
 }
 
+::-moz-selection {
+  @mixin page-selection-styles;
+}
+
 ::selection {
-  background : var(--color-brand-accent);
-  color      : #ffffff;
-  text-shadow: none;
+  @mixin page-selection-styles;
 }

@@ -7,7 +7,7 @@
 *
 * Mixin to drop micro clearfix into a selector. Further reading:
 * http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
-* 
+*
 * .usage {
 *   @mixin clearfix;
 * }
@@ -29,6 +29,11 @@
   }
 
   &:after {
-    clear: both; 
+    clear: both;
   }
+}
+
+@define-mixin clearfix-override {
+  &:before,
+  &:after { display: none !important;}
 }

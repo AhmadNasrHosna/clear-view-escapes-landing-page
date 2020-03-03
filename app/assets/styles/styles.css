@@ -39,8 +39,6 @@
 @import "tools/mixins/_clearfix";
 @import "tools/mixins/_effects";
 
-// @import 'imports/tools/_placeholders';
-
 /**
  * Generic. or (Vendors things)
  *
@@ -70,12 +68,14 @@
 @import "elements/_headings";
 @import "elements/_paragraphs";
 
+
 /**
  * Layouts. (namespace: l-)
  *
  */
 
  @import "layouts/_flow";
+ @import "layouts/_testimonials";
 
 
 /**
@@ -103,7 +103,8 @@
  */
 
 @import "components/_buttons";
-@import "components/_our-beginning-info";
+@import "components/_features";
+@import "components/_testimonials";
 
 /**
  * Patterns. (namespace: p-)

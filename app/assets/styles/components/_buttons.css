@@ -17,7 +17,8 @@
      --brs-btn-base               : 4px; // Border radius
    --space-btn-base-padding       : .75em 1.4em; // Not change, based on font size of the button
   // Main button styles
-   --font-btn-primary-size        : rem(16px);
+   --font-btn-primary-size        : rem(15px); @mixin bp md {
+   --font-btn-primary-size        : rem(16px); }
   --color-btn-primary-bg          : var(--color-brand-primary);
   --color-btn-primary-color       : #FFFFFF;
   --color-btn-primary-bd-c        : transparent;
@@ -52,11 +53,12 @@
   display         : inline-block;
   text-align      : center;
   cursor          : pointer;
+  white-space     : nowrap;
   line-height     : 1;
   padding         : var(--space-btn-base-padding);
-  border-radius   : var(--brs-btn-base);
   font-weight     : var(--font-btn-base-weight);
   font-family     : var(--font-btn-base-family);
+  border-radius   : var(--brs-btn-base);
   border          : var(--border-btn-base-width) var(--border-btn-base-style) transparent;
   transition      :
     box-shadow       var(--transition-duration-global),
@@ -112,41 +114,55 @@
 
 
   // Round button
-  &__round {
+  &--round {
     border-radius       : var(--brs-btn-round);
   }
 
   // Square buttons
-  &__square {
+  &--square {
     border-radius       : 0;
   }
 
 
   // Full width buttons (block level) - A button can take the width of its container
-  &__fluid {
-    display             : block;
-    width               : 100%;
+  &--fluid {
+    @mixin bp as {
+      display           : block;
+      width             : 100%;
+      margin-inline     : 0 !important;
+    }
   }
 
 
   &[disabled] {
-    color               : #d2d5db;
-    background-color    : #6c7589;
-    cursor              : not-allowed;
+    pointer-events:none;
+    opacity: 0.4;
   }
 
 
   // Medium Button
-  &--md   { font-size: rem(19px) }
+  &--md {
+    font-size: rem(18px); @mixin bp sm {
+    font-size: rem(19px); }
+  }
 
   // Big Button
-  &--lg   { font-size: rem(22px) }
+  &--lg {
+    font-size: rem(20px); @mixin bp sm {
+    font-size: rem(22px); }
+  }
 
   // xLarge Button
-  &--xlg  { font-size: rem(25px) }
+  &--xl {
+    font-size: rem(22px); @mixin bp sm {
+    font-size: rem(25px); }
+  }
 
   // xxLarge Button
-  &--xxlg { font-size: rem(28px) }
+  &--xx {
+    font-size: rem(24px); @mixin bp sm {
+    font-size: rem(28px); }
+  }
 
 }
 

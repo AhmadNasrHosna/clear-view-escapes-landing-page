@@ -33,9 +33,8 @@ video {
   height: auto;
 }
 
-/*
- * Redefining such properties to inherit on form elements
- */
+
+/* Inherit fonts for inputs and buttons */
 
 input,
 select,

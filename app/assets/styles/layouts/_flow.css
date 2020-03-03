@@ -13,7 +13,8 @@
 
 
 .l-flow {
-  --flow-space-all      : var(--s4);
+  // Default
+  --flow-space-all   : var(--s4);
   --flow-space-p     : calc(var(--s2) - var(--s-4));
   --flow-space-p-to-h: var(--s2);
 
@@ -39,6 +40,13 @@
     margin-top: rem(32px); // fallback
     margin-top: var(--flow-space-p-to-h);
   }
+}
+
+.l-flow--sm {
+  // Default
+  --flow-space-all   : var(--s2);
+  --flow-space-p     : calc(var(--s1) - var(--s-3));
+  --flow-space-p-to-h: var(--s1);
 }
 
 .l-flow__all-s1  { --flow-space-all    : var(--s1); }

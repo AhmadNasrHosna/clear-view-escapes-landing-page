@@ -1,3 +1,5 @@
+// INTER
+
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
@@ -197,4 +199,32 @@ explicitly, e.g.
   font-display: swap;
   font-style: oblique 0deg 10deg;
   src: url("/assets/fonts/inter/Inter.var.woff2?v=3.12") format("woff2");
+}
+
+/* ------------------------------------------------------- */
+
+// BLUU NEXT
+
+@font-face {
+  font-family: 'bluu_nextbold';
+  src: url('/assets/fonts/bluunext/bluunext-bold-webfont.woff2') format('woff2'),
+       url('/assets/fonts/bluunext/bluunext-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bluu_nextbold_italic';
+  src: url('/assets/fonts/bluunext/bluunext-bolditalic-webfont.woff2') format('woff2'),
+       url('/assets/fonts/bluunext/bluunext-bolditalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bluu_nexttitling';
+  src: url('/assets/fonts/bluunext/bluunext-titling-webfont.woff2') format('woff2'),
+       url('/assets/fonts/bluunext/bluunext-titling-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

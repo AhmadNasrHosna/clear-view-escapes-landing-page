@@ -10,10 +10,6 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
-
-		& .o-container {
-			--flow-space-all: var(--s3);
-		}
 	}
 
 	&__title,
@@ -23,33 +19,23 @@
 	}
 
 	&__title {
-		font-size: calc(var(--s3) - var(--s-3));
+		font-size: calc(var(--s4) + var(--s0));
 		font-weight: 500;
 
-		@mixin bp md {
-			font-size: calc(var(--s4) + var(--s0));
-		}
 	}
 
 	&__subtitle {
-		font-size: calc( var(--s1) + var(--s-5) );
+		font-size: var(--s3);
 		font-weight: 300;
-
-		@mixin bp md {
-			font-size: var(--s3);
-		}
 	}
 
 	&__description {
 		color: #ffffff;
 		font-weight: 100;
-		font-size: rem(17.6px);
+		font-size: calc(var(--s1) + var(--s-3));
 		margin-inline: auto;
 		text-shadow: 2px 2px 0 hsl(0, 0%, 0%, 0.1);
 
-		@mixin bp md {
-			font-size: calc(var(--s1) + var(--s-3));
-			max-width: rem(480px);
-		}
+		@mixin bp md { max-width: rem(480px); }
 	}
 }

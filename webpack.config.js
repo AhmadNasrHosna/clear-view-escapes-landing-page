@@ -10,10 +10,9 @@ const postCSSPlugins = [
   require('postcss-extend'),
   require('postcss-logical')(),
   require('postcss-color-mod-function'),
-  require('postcss-preset-env')({ stage: 0 }),
+  require('postcss-preset-env'),
   require('postcss-rem')({
     baseline: 10, // Default to 16
-    fallback: true, // Default to false
     precision: 3 // Default to 5
   })
 ];

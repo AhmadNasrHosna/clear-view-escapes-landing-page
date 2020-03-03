@@ -14,9 +14,7 @@
 // will sit on our baseline grid.
 
 h1, h2, h3, h4, h5, h6 {
-  @mixin bp as {
-    line-height: var(--line-height-sm);
-  }
+  line-height: var(--line-height-sm);
 }
 
 // Heading mobile individual styles
