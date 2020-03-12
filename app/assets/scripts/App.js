@@ -4,7 +4,7 @@ if (module.hot) {
   module.hot.accept();
 }
 
-alert()
+alert("temp-branch")
 
 // Show & hide header drawer
 
