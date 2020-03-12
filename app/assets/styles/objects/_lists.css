@@ -1,33 +1,30 @@
 /* ==========================================================================
-  LISTS (GLOBAL)
-  ========================================================================== */
+LISTS (GLOBAL)
+========================================================================== */
 
-.o-list {
-  /**
-   * #LIST-BARE
-   * Strip list-like appearance from lists
-   * by removing their bullets and any indentation.
-   */
 
-  &--bare {
-    margin-left: 0;
-    list-style: none;
-  }
+/**
+  * #LIST-BARE
+  * Strip list-like appearance from lists
+  * by removing their bullets and any indentation.
+  */
 
-  /**
-   * #LIST-INLINE
-   * This modifier simply displays a list of items in one line.
-   * [1]: Remove the space between inline block elements
-   * https://css-tricks.com/fighting-the-space-between-inline-block-elements/
-   */
+.o-list-bare {
+  list-style: none;
+}
 
-  &--inline {
-    li { display: inline-block; } /* Fallback styles for old browesers */
+/**
+  * #LIST-INLINE
+  * This modifier simply displays a list of items in one line.
+  * [1]: Remove the space between inline block elements
+  * https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+  */
 
-    @supports (display: flex) {
-      display: inline-flex; /* [1] */
+.o-list-inline {
+  li { display: inline-block; } /* Fallback styles for old browesers */
 
-      li { display: list-item; }
-    }
+  @supports (display: flex) {
+    display: inline-flex; /* [1] */
   }
 }
+

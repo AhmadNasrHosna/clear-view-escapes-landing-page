@@ -8,8 +8,10 @@
 		width: 100%;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
 		text-align: center;
+		transform: translate(-50%, -50%) scale(.85); @mixin bp sm {
+		transform: translate(-50%, -50%); }
+		@mixin bp as { padding-top: rem(100px); }
 	}
 
 	&__title,

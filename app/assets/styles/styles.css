@@ -38,6 +38,9 @@
 @import "tools/mixins/_breakpoints";
 @import "tools/mixins/_clearfix";
 @import "tools/mixins/_effects";
+@import "tools/mixins/_animations";
+@import "tools/mixins/_sr-only";
+@import "tools/mixins/_centering";
 
 /**
  * Generic. or (Vendors things)
@@ -68,16 +71,6 @@
 @import "elements/_headings";
 @import "elements/_paragraphs";
 
-
-/**
- * Layouts. (namespace: l-)
- *
- */
-
- @import "layouts/_flow";
- @import "layouts/_testimonials";
-
-
 /**
  * Objects. (namespace: o-)
  *
@@ -92,6 +85,15 @@
 @import "objects/_section";
 @import "objects/_media";
 
+/**
+ * Layouts. (namespace: l-)
+ *
+ */
+
+ @import "layouts/_flow";
+ @import "layouts/_testimonials";
+ @import "layouts/_header";
+ @import "layouts/_section";
 
 /**
  * Components. (namespace: c-)
@@ -113,7 +115,8 @@
  * for example, The header would be a pattern because it is not scalable (the header cannot be used in the content or sidebar area) and also contains other components such as buttons, accordions, menus, logos, search form etc
  */
 
-@import 'patterns/_hero';
+@import 'patterns/_header';
+@import 'patterns/_home-hero';
 @import 'patterns/_footer';
 
 /**
@@ -132,7 +135,7 @@
  */
 
 // @import 'utilities/_background';
-// @import 'utilities/_centering';
+@import 'utilities/_centering';
 // @import 'utilities/_display';
 // @import 'utilities/_floats';
 @import 'utilities/_headings';
@@ -142,5 +145,5 @@
 @import 'utilities/_colors';
 @import 'utilities/_clearfix';
 @import 'utilities/_effects';
-// @import 'utilities/_showhide';
+@import 'utilities/_show-hide';
 @import 'utilities/_print';

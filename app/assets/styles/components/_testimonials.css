@@ -1,4 +1,4 @@
-:root { --testimonial-avatar-width: rem(160px); } // local variable for .l-testimonials
+:root { --testimonial-avatar-width: rem(160px); }
 
 .c-testimonial {
   background: color-mod(var(--color-brand-accent) lightness(98%));
@@ -16,6 +16,7 @@
     font-size: var(--s3); @mixin bp md {
     font-size: var(--s2); }
     font-family: var(--font-family-special);
+    line-height: var(--line-height-md);
   }
 
   &__subtitle {
@@ -53,7 +54,7 @@
       content: '';
       display: block;
       position: absolute;
-      top: rem(-72px);
+      top: rem(-72.5px);
       left: calc(50% - (var(--svg-width)/2));
       width: var(--svg-width);
       height: var(--svg-width);

@@ -7,24 +7,39 @@
   <title>Clear View Escapes</title>
   <meta name="keywords" content="Travel planning, travel bundles, travel escapes">
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
-
 
 </head>
 
 <body>
   <div class="o-bage">
-    <header class="p-header">
-      <div class="o-container">
-        <img src="assets/images/icons/clear-view-escapes.svg">
-        <button class="c-button c-button--primary">Get in Touch</button>
-        <nav>
-          <ul role="list" class="o-list--bare o-list--inline">
-            <li><a href="#our-beginning">Our Beginning</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-          </ul>
-        </nav>
+    <header class="p-header l-header js-header">
+      <div class="o-container o-container--lg">
+        <div class="l-header__content">
+          <div class="p-header__logo l-header__logo">
+            <img src="assets/images/icons/clear-view-escapes.svg">
+          </div>
+          <button class="p-header__drawer-trigger l-header__drawer-trigger js-headerDrawerTrigger u-hidden--md">
+            <span class="u-sr-only">Header drawer trigger</span>
+            <svg viewbox="0 0 100 100" width="100%" height="100%">
+              <circle cx="50" cy="50"></circle>
+            </svg>
+            <div class="c-hamburger">
+              <div class="center"></div>
+            </div>
+          </button>
+          <div class="p-header__drawer l-header__drawer js-headerDrawer">
+            <div class="l-header__drawer-wrapper">
+              <nav class="p-header__nav l-header__nav">
+                <ul role="list" class="o-list-bare o-list-inline">
+                  <li><a href="#our-beginning">Our Beginning</a></li>
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+              </nav>
+              <button class="c-button c-button--primary c-button--fluid">Get in Touch</button>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -39,33 +54,38 @@
           </picture>
 
           <div class="p-hero__content">
-            <div class="o-container l-flow">
+            <div class="o-container o-container--lg l-flow">
               <h1 class="p-hero__title u-ls-n-015">Your clarity.</h1>
               <h2 class="p-hero__subtitle [ u-lh-xs l-flow__all-reset ]">One trip away.</h2>
               <p class="p-hero__description u-lh-sm">We create soul restoring journeys that inspire you to be you.</p>
-              <button class="[ c-button c-button--md c-button--accent c-button--accent-shadow ] l-flow__all-s3" ">Get Started Today</button>
+              <button class="[ c-button c-button--md c-button--accent c-button--accent-shadow ] l-flow__all-s3">Get Started Today</button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="o-section o-section--our-beginning " id="our-beginning ">
-        <div class="o-container l-flow ">
-          <div class="o-section__head u-align-center ">
-            <h2 class="o-section__title ">The first trip we planned <strong>was our own.</strong></h2>
-            <h3 class="o-section__subtitle ">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone.</strong></h3>
+      <section class="o-section o-section--our-beginning" id="our-beginning">
+        <div class="o-container o-container--lg l-flow">
+          <div class="o-section__head u-align-center">
+            <h2 class="o-section__title">The first trip we planned <strong>was our own.</strong></h2>
+            <h3 class="o-section__subtitle">Ever since, we&rsquo;ve been working to make travel <strong>better for everyone.</strong></h3>
           </div>
 
-          <div class="u-align-center ">
-            <img class="u-box-shadow-radius " src="assets/images/first-trip.jpg " alt="Couple walking down a street. ">
+          <div class="u-align-center">
+            <img class="u-box-shadow-radius" src="assets/images/first-trip.jpg" alt="Couple walking down a street.">
           </div>
-          <div class="o-media ">
-            <div class="o-media__img ">
-              <img class="u-box-shadow-radius " src="assets/images/our-start.jpg " alt="Our founder, Jane Doe ">
+          <div class="o-media">
+            <div class="o-media__img">
+              <picture>
+                <source sizes="404px" media="(min-width: 992px)" srcset="assets/images/our-start.jpg 404w, assets/images/our-start-hi-dpi.jpg 808w">
+                <source sizes="320px" media="(min-width: 768px)" srcset="assets/images/our-start-portrait.jpg 382w, assets/images/our-start-portrait-hi-dpi.jpg 764w">
+                <img class="u-box-shadow-radius" src="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder John Doe">
+              </picture>
+
             </div>
-            <div class="o-media__content l-flow ">
-              <h2 class="u-fw-300 u-s3 u-color-brand-primary ">Here&rsquo;s how we got started&hellip;</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#0 ">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo
+            <div class="o-media__content l-flow">
+              <h2 class="u-fw-300 u-s3 u-color-brand-primary">Here&rsquo;s how we got started&hellip;</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="#0">quis nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>Duis aute irure dolor in <strong>reprehenderit in</strong> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
                 ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -75,98 +95,101 @@
         </div>
       </section>
 
-      <section class="o-section o-section--dark o-section--features " id="features ">
-        <div class="o-container l-flow ">
-          <div class="o-section__head u-align-center ">
-            <img class="c-icon--inline " src="assets/images/icons/star.svg ">
-            <h2 class="o-section__title ">Our <strong>Features</strong></h2>
+      <section class="o-section o-section--dark o-section--features l-section" id="features">
+        <div class="o-container o-container--lg l-flow">
+          <div class="o-section__head l-section__head u-align-center">
+            <img class="c-icon--inline" src="assets/images/icons/star.svg">
+            <h2 class="o-section__title">Our <strong>Features</strong></h2>
           </div>
-          <div class="c-features l-flow__all-s5 ">
-            <div class="c-feature l-flow ">
-              <img class="c-feature__icon " src="assets/images/icons/rain.svg ">
-              <h3 class="c-feature__title l-flow__all-s2 ">Weather Watching</h3>
-              <p class="c-feature__desc ">Download our app and we&rsquo;ll send you a notice if it&rsquo;s about to rain in the next 20 minutes around your current location. A good rain can be refreshing, but sometimes you just want to stay dry.</p>
-           </div>
-
-            <div class="c-feature l-flow ">
-              <img class="c-feature__icon " src="assets/images/icons/globe.svg ">
-              <h3 class="c-feature__title l-flow__all-s2 ">Global Guides</h3>
-              <p class="c-feature__desc ">We&rsquo;ve scoured the entire planet for the best retreats and beautiful vistas. If there&rsquo;s a corner of the world you want to escape to we know the most scenic and inspiring locations.</p>
+          <div class="c-features l-flow__all-s5">
+            <div class="c-feature l-flow">
+              <img class="c-feature__icon" src="assets/images/icons/rain.svg">
+              <h3 class="c-feature__title l-flow__all-s2">Weather Watching</h3>
+              <p class="c-feature__desc">Download our app and we&rsquo;ll send you a notice if it&rsquo;s about to rain in the next 20 minutes around your current location. A good rain can be refreshing, but sometimes you just want to stay dry.</p>
             </div>
 
-            <div class="c-feature l-flow ">
-              <img class="c-feature__icon " src="assets/images/icons/wifi.svg ">
-              <h3 class="c-feature__title l-flow__all-s2 ">Wi-Fi Waypoints</h3>
-              <p class="c-feature__desc ">We only send you on trips to places we can personally vouch for as being amazing. Which means we&rsquo;ve mapped out where local wi-fi spots are and marked them in our app&rsquo;s map view.</p>
+            <div class="c-feature l-flow">
+              <img class="c-feature__icon" src="assets/images/icons/globe.svg">
+              <h3 class="c-feature__title l-flow__all-s2">Global Guides</h3>
+              <p class="c-feature__desc">We&rsquo;ve scoured the entire planet for the best retreats and beautiful vistas. If there&rsquo;s a corner of the world you want to escape to we know the most scenic and inspiring locations.</p>
             </div>
 
-            <div class="c-feature l-flow ">
-              <img class="c-feature__icon " src="assets/images/icons/fire.svg ">
-              <h3 class="c-feature__title l-flow__all-s2 ">Survival Kit</h3>
-              <p class="c-feature__desc ">Everytime you book an escape with us we send you a survival kit with the finest materials. The kit will allow you to setup a tent, start a fire, scratch your own back and lower your taxes.</p>
+            <div class="c-feature l-flow">
+              <img class="c-feature__icon" src="assets/images/icons/wifi.svg">
+              <h3 class="c-feature__title l-flow__all-s2">Wi-Fi Waypoints</h3>
+              <p class="c-feature__desc">We only send you on trips to places we can personally vouch for as being amazing. Which means we&rsquo;ve mapped out where local wi-fi spots are and marked them in our app&rsquo;s map view.</p>
             </div>
+
+            <div class="c-feature l-flow">
+              <img class="c-feature__icon" src="assets/images/icons/fire.svg">
+              <h3 class="c-feature__title l-flow__all-s2">Survival Kit</h3>
+              <p class="c-feature__desc">Everytime you book an escape with us we send you a survival kit with the finest materials. The kit will allow you to setup a tent, start a fire, scratch your own back and lower your taxes.</p>
             </div>
+          </div>
         </div>
       </section>
 
-      <section class="o-section o-section--our-testimonials " id="testimonials ">
-        <div class="o-container l-flow ">
-          <div class="o-section__head u-align-center ">
-            <img class="c-icon--inline " src="assets/images/icons/comment.svg ">
-            <h2 class="o-section__title ">Real <strong>Testimonials</strong></h2>
+      <section class="o-section o-section--our-testimonials l-section" id="testimonials">
+        <div class="o-container o-container--lg l-flow">
+          <div class="o-section__head l-section__head u-align-center">
+            <img class="c-icon--inline" src="assets/images/icons/comment.svg">
+            <h2 class="o-section__title">Real <strong>Testimonials</strong></h2>
           </div>
-          <div class="l-testimonials l-flow__all-s5 ">
+          <div class="l-testimonials l-flow__all-s5">
 
-            <div class="c-testimonial l-testimonial ">
-              <img src="assets/images/testimonial-jane.jpg " class="c-testimonial__avatar ">
-              <h3 class="c-testimonial__title ">Ahmed Nasr</h3>
-              <h3 class="c-testimonial__subtitle ">9 Time Escaper</h3>
-              <p class="c-testimonial__text ">"Before finding my local Cat Friendly Practice®, my three kitties were completely stressed out when it came to visiting the vet. However, that 's a thing of the past since taking them to a CFP. The environment, coupled with friendly and knowledgeable staff seem to soothe them."</>
+            <div class="c-testimonial l-testimonial">
+              <img src="assets/images/testimonial-jane.jpg" class="c-testimonial__avatar">
+              <h3 class="c-testimonial__title">Ahmed Nasr</h3>
+              <h3 class="c-testimonial__subtitle">9 Time Escaper</h3>
+              <p class="c-testimonial__text">"Before finding my local Cat Friendly Practice®, my three kitties were completely stressed out when it came to visiting the vet. However, that 's a thing of the past since taking them to a CFP. The environment, coupled with friendly and
+                knowledgeable staff seem to soothe them."
+                </>
             </div>
 
             <div class="c-testimonial l-testimonial">
-              <img src="assets/images/testimonial-john.jpg " class="c-testimonial__avatar ">
-              <h3 class="c-testimonial__title ">Mesh Mesh</h3>
-              <h3 class="c-testimonial__subtitle ">4 Time Escaper</h3>
-              <p class="c-testimonial__text ">"Having been a 30-year client of a Cat Friendly Practice®, I can personally attest to the high level of care that is unique to CFP hospitals/clinics. CFP veterinary professionals have a significantly increased depth of feline knowledge and understand that cats are distinctive animals with specific needs and should always be handled with respect."</p>
+              <img src="assets/images/testimonial-john.jpg" class="c-testimonial__avatar">
+              <h3 class="c-testimonial__title">Mesh Mesh</h3>
+              <h3 class="c-testimonial__subtitle">4 Time Escaper</h3>
+              <p class="c-testimonial__text">"Having been a 30-year client of a Cat Friendly Practice®, I can personally attest to the high level of care that is unique to CFP hospitals/clinics. CFP veterinary professionals have a significantly increased depth of feline knowledge and
+                understand that cats are distinctive animals with specific needs and should always be handled with respect."</p>
             </div>
 
             <div class="c-testimonial l-testimonial">
-              <img src="assets/images/testimonial-cat.jpg " class="c-testimonial__avatar ">
-              <h3 class="c-testimonial__title ">Shalaby the Cat</h3>
-              <h3 class="c-testimonial__subtitle ">6 Time Escaper</h3>
-              <p class="c-testimonial__text ">"I would highly recommend a Cat Friendly Practice® to anyone looking to have a smooth, less stressful visit to the vet with your cat. I have always been satisfied with the way the CFP staff and doctors treat
-                my kitties. The CFP has a very calm and quiet environment. Many thanks to the staff and doctors for always treating my kitties with so much love. You can tell they love cats."</p>
-            </div>
+              <img src="assets/images/testimonial-cat.jpg" class="c-testimonial__avatar">
+              <h3 class="c-testimonial__title">Shalaby the Cat</h3>
+              <h3 class="c-testimonial__subtitle">6 Time Escaper</h3>
+              <p class="c-testimonial__text">"I would highly recommend a Cat Friendly Practice® to anyone looking to have a smooth, less stressful visit to the vet with your cat. I have always been satisfied with the way the CFP staff and doctors treat my kitties. The CFP has a very
+                calm and quiet environment. Many thanks to the staff and doctors for always treating my kitties with so much love. You can tell they love cats."</p>
             </div>
           </div>
+        </div>
       </section>
     </main>
-    <footer class="p-footer u-align-center ">
-      <div class="o-container ">
-        <p class="p-footer__copyrights-text ">Copyright &copy; 2019 Clear View Escapes. All rights reserved. <button class="c-button c-button--accent c-button--fluid ">Get in Touch</button></p>
+    <footer class="p-footer u-align-center">
+      <div class="o-container o-container--lg">
+        <p class="p-footer__copyrights-text">Copyright &copy; 2019 Clear View Escapes. All rights reserved.<button class="c-button c-button--accent c-button--fluid">Get in Touch</button></p>
     </footer>
     </div>
-    <!-- Leave this commented out HTML here until you need it for an upcoming "modal " lesson
-<div class="modal ">
-<div class="modal__inner ">
-<h2 class="section-title section-title--blue section-title--less-margin "><img src="assets/images/icons/mail.svg " class="section-title__icon "> Get in <strong>Touch</strong></h2>
-<div class="wrapper wrapper--narrow ">
-<p class="modal__description ">We will have an online order system in place soon. Until then, connect with us on any of the platforms below!</p>
+    <!-- Leave this commented out HTML here until you need it for an upcoming"modal" lesson
+<div class="modal">
+<div class="modal__inner">
+<h2 class="section-title section-title--blue section-title--less-margin"><img src="assets/images/icons/mail.svg" class="section-title__icon"> Get in <strong>Touch</strong></h2>
+<div class="wrapper wrapper--narrow">
+<p class="modal__description">We will have an online order system in place soon. Until then, connect with us on any of the platforms below!</p>
 </div>
 
-<div class="social-icons ">
-<a href="#0 " class="social-icons__icon "><img src="assets/images/icons/facebook.svg " alt="Facebook "></a>
-<a href="#0 " class="social-icons__icon "><img src="assets/images/icons/twitter.svg " alt="Twitter "></a>
-<a href="#0 " class="social-icons__icon "><img src="assets/images/icons/instagram.svg " alt="Instagram "></a>
-<a href="#0 " class="social-icons__icon "><img src="assets/images/icons/youtube.svg " alt="YouTube "></a>
+<div class="social-icons">
+<a href="#0" class="social-icons__icon"><img src="assets/images/icons/facebook.svg" alt="Facebook"></a>
+<a href="#0" class="social-icons__icon"><img src="assets/images/icons/twitter.svg" alt="Twitter"></a>
+<a href="#0" class="social-icons__icon"><img src="assets/images/icons/instagram.svg" alt="Instagram"></a>
+<a href="#0" class="social-icons__icon"><img src="assets/images/icons/youtube.svg" alt="YouTube"></a>
 </div>
 </div>
-<div class="modal__close ">X</div>
+<div class="modal__close">X</div>
 </div>
-This is the end of the "modal " reference HTML -->
+This is the end of the"modal" reference HTML -->
 
-    <script src="bundled.js "></script>
+    <script src="bundled.js"></script>
 </body>
 
 </html>

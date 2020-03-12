@@ -1,19 +1,13 @@
-
-
 .o-section {
   background-color: #fff;
   padding: var(--s5) 0; @mixin bp md {
   padding: calc(var(--s6) - var(--s-1)) 0; }
 
-  .c-icon--inline {
-    position: relative;
-    top: rem(-20px);
-
-    & + * {
-      display: inline-block;
-      margin-left: var(--s0);
-    }
+  &__head {
+    text-align: center; // fallback for legacy browsers
   }
+
+  .c-icon--inline { margin-right: var(--s0); }
 
   &__title,
   &__subtitle {

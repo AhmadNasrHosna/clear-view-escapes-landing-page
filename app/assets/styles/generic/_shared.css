@@ -25,7 +25,6 @@ audio,
 canvas,
 iframe,
 img,
-svg,
 video {
   max-width: 100%; /* [1] */
   font-style: italic; /* [2] */
@@ -34,19 +33,17 @@ video {
 }
 
 
-/* Inherit fonts for inputs and buttons */
+/* ------- */
 
-input,
-select,
-textarea,
-button {
-  appearance: none;
-  font: inherit;
+
+button, [type="button"], [type="reset"], [type="submit"] {
+  padding: 0;
 }
 
 input,
 select,
 textarea,
+button,
 .c-button {
   outline: none;
 

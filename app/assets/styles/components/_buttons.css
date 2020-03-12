@@ -133,6 +133,14 @@
     }
   }
 
+  &--width-80\% {
+    @mixin bp xs {
+      display           : block;
+      width             : 80%;
+      margin-inline     : auto !important;
+    }
+  }
+
 
   &[disabled] {
     pointer-events:none;

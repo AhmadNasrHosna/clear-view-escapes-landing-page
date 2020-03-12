@@ -17,19 +17,12 @@
   // BREAKPOINTS Mixins
   //==============================================================================
 
-  $bp-xs: 35.99875em; // 1em == 16px
-  $bp-sm: 36em;
-  $bp-as: 47.99875em;
-  $bp-md: 48em; // Mostly we start from here.
-  $bp-lg: 62em;
-  $bp-xl: 75em;
-
-  //==============================================================================
-  // Containers
-  //==============================================================================
-
-  --container-width    :  rem(900px); @media (min-width: $bp-md) {
-  --container-width    : rem(1236px); }
+  $bp-xs: 35.99875em; //~ 575.98px      1em == 16px
+  $bp-sm: 36em;       //~ 576px
+  $bp-as: 47.99875em; //~ 767.98px
+  $bp-md: 48em;       //~ 768px
+  $bp-lg: 62em;       //~ 992px
+  $bp-xl: 75em;       //~ 1200px
 
   //==============================================================================
   // Global Colors
@@ -80,6 +73,11 @@
   //==============================================================================
 
   // Modular Scale
+  --base-scale-size-xs: rem(10.5px);
+  --base-scale-size-sm: rem(12.5px);
+  --base-scale-size-md: rem(14px);
+  --base-scale-size-lg: rem(16px);
+
   --ratio: 1.4; // The ratio number
   --s-6: calc(var(--s-5) / var(--ratio));
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -87,11 +85,11 @@
   --s-3: calc(var(--s-2) / var(--ratio));
   --s-2: calc(var(--s-1) / var(--ratio));
   --s-1:  calc(var(--s0) / var(--ratio));
-  // --s0 is the base scale size (Mobile First Aproach)
-  --s0:  rem(10.5px);   @media (min-width: $bp-sm) {
-  --s0:  rem(12.5px); } @media (min-width: $bp-sm) {
-  --s0:    rem(14px); } @media (min-width: $bp-sm) {
-  --s0:    rem(16px); }
+  // --s0 is the base scale size (mobile-first)
+  --s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
+  --s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
+  --s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
+  --s0: var(--base-scale-size-lg) }
   --s1: calc(var(--s0) * var(--ratio));
   --s2: calc(var(--s1) * var(--ratio));
   --s3: calc(var(--s2) * var(--ratio));

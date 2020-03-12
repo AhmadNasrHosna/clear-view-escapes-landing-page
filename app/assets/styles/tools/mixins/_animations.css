@@ -7,17 +7,17 @@
  */
 
 
-/* Animate from bottom to top */
+/* Animate from scale(1) to scal(1.5) */
 
-@mixin anime-fade-in-bottom-top() {
+@define-mixin animation-fade-in-with-scale {
   opacity: 0;
-  transform: translate3d(0, rem(30), 0);
-  transition: all $unicorn-g-transition-slow $easeOutSine 0.5s;
+  transform: scale(1.5);
+  transition: var(--transition-global);
   visibility: hidden;
 
   &.is-visible {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: scale(1);
     visibility: visible;
   }
 }
