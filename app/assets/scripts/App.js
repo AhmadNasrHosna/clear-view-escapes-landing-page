@@ -4,8 +4,6 @@ if (module.hot) {
   module.hot.accept();
 }
 
-alert("temp-branch")
-
 // Show & hide header drawer
 
 const headerDrawerTrigger = document.querySelector('.js-headerDrawerTrigger');
