@@ -9,7 +9,7 @@
 
  :root {
   --container-width-xs: rem(600px);
-  --container-width-sm: rem(720px);
+  --container-width-sm: rem(976px);
   --container-width-md: rem(1024px);
   --container-width-lg: rem(1280px);
   --container-width-xl: rem(1440px);
@@ -20,6 +20,8 @@
   width: calc(100% - var(--container-padding)); @mixin bp sm {
   width: calc(100% - (2 * var(--container-padding))); }
   margin: 0 auto;
+
+  .o-container { width: 100%; }
 
   &--full-width {
     width: 100%;

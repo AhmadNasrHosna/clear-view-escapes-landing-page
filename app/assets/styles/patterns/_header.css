@@ -13,6 +13,10 @@
     padding: calc(var(--s1) + var(--s-5)) calc(var(--s2) + var(--s-3));
   }
 
+  &:focus {
+    box-shadow: 0 0 0 6px color-mod(var(--color-brand-primary) a(45%));
+  }
+
   &__drawer-trigger {
     // Credit: https://codepen.io/bradeneast/pen/wvvbzgY
     --weight: 10%;
@@ -103,10 +107,6 @@
           transition: width var(--ease) 0.1s, right var(--bounce);
         }
       }
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 6px color-mod(var(--color-brand-primary) a(45%));
     }
   }
 
