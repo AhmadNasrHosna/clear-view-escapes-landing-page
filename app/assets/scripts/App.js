@@ -4,6 +4,8 @@ if (module.hot) {
   module.hot.accept();
 }
 
+alert()
+
 // Show & hide header drawer
 
 const headerDrawerTrigger = document.querySelector('.js-headerDrawerTrigger');
