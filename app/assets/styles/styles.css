@@ -38,7 +38,6 @@
 @import "tools/mixins/_breakpoints";
 @import "tools/mixins/_clearfix";
 @import "tools/mixins/_effects";
-@import "tools/mixins/_animations";
 @import "tools/mixins/_sr-only";
 @import "tools/mixins/_centering";
 
@@ -84,7 +83,7 @@
 @import "objects/_lists";
 @import "objects/_section";
 @import "objects/_media";
-
+@import "objects/_animations";
 /**
  * Layouts. (namespace: l-)
  *
