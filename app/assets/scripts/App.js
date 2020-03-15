@@ -1,11 +1,13 @@
 import '../styles/styles.css';
-import HeaderDrawerMenu from './modules/HeaderDrawerMenu';
-import RevealOnScroll from './modules/RevealOnScroll';
+import HeaderDrawerMenu from './modules/header-drawer-menu';
+import StickyHeader from './modules/sticky-header';
+import RevealOnScroll from './modules/reveal-on-scroll';
 
 if (module.hot) {
   module.hot.accept();
 }
 
 new HeaderDrawerMenu();
-new RevealOnScroll(document.querySelectorAll('.c-feature'), 25);
-new RevealOnScroll(document.querySelectorAll('.c-testimonial'), 25);
+new StickyHeader();
+new RevealOnScroll(document.querySelectorAll('.c-feature'), 15);
+new RevealOnScroll(document.querySelectorAll('.c-testimonial'), 15);

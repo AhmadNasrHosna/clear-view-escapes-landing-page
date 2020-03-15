@@ -5,12 +5,29 @@
 }
 
 .p-header {
-  background: color-mod(var(--color-brand-primary) a(30%));
-  @mixin bp md { padding: var(--s-1) 0; }
+  background-color: color-mod(var(--color-brand-primary) a(30%));
+  transition: background 300ms ease-out;
+
+  @mixin bp md {
+    padding: var(--s-1) 0;
+
+    &--is-dark {
+      background-color: color-mod(var(--color-brand-primary) s(53%) l(19%) a(85%));
+    }
+  }
 
   &__logo {
     background-color: var(--color-brand-primary);
     padding: calc(var(--s1) + var(--s-5)) calc(var(--s2) + var(--s-3));
+    transition: transform 300ms ease;
+
+    @mixin bp md {
+      transform-origin: top;
+
+      .p-header--is-dark & {
+        transform: scale(.59);
+      }
+    }
   }
 
   &__drawer-trigger {
@@ -149,7 +166,16 @@
         font-weight: 300;
         font-size: rem(12px);   @mixin bp sm {
         font-size: rem(14px); } @mixin bp md {
-        font-size: rem(16px); }
+        font-size: rem(15px); }
+
+        @mixin bp md {
+          transition: color 300ms ease, font-weight 100ms ease;
+
+          &.is-current-section {
+            color: var(--color-brand-accent);
+            font-weight: 600;
+          }
+        }
       }
 
       @mixin bp as {

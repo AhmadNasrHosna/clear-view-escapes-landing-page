@@ -14,13 +14,11 @@
     position: absolute;
     top: 0; left: 50%;
     z-index: var(--zi-popover);
-    transform-origin: top;
     transform: translateX(-50%);
-    @mixin bp sm { transform: translateX(-50%) scale(.85); }
 
     @mixin bp md {
-      left: initial;
-      transform: scale(1);
+      left: auto;
+      transform: translateX(0);
     }
   }
 

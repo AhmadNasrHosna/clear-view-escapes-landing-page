@@ -17,6 +17,7 @@
 
 html {
   font-size  : var(--font-size-base);  /* [1] : 10px */
+  scroll-behavior: smooth; /* [3] */
 }
 
 body {
@@ -30,7 +31,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
   min-height: 100vh;  /* [2] */
-  scroll-behavior: smooth; /* [3] */
 }
 
 
