@@ -5,7 +5,7 @@
 
   &__copyrights-text {
     font-weight: 200;
-    font-size: calc(var(--font-size-global) - .1rem);
+    font-size: calc(var(--font-size-global) - rem(1px));
 
     @mixin bp as {
       max-width: 52ch;
