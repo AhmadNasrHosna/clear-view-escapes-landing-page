@@ -11,7 +11,8 @@
 		text-align: center;
 		transform: translate(-50%, -50%) scale(.85); @mixin bp sm {
 		transform: translate(-50%, -50%); }
-		@mixin bp as { padding-top: rem(100px); }
+		padding-top: calc(var(--s6) * 1.2); @mixin bp md {
+		padding-top: var(--s3); }
 	}
 
 	&__title,

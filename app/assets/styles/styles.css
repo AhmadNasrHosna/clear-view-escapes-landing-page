@@ -41,6 +41,7 @@
 @import "tools/mixins/_sr-only";
 @import "tools/mixins/_centering";
 @import "tools/mixins/_pseudo-starter";
+@import 'tools/mixins/_reset';
 
 /**
  * Generic. or (Vendors things)
@@ -85,6 +86,7 @@
 @import "objects/_section";
 @import "objects/_media";
 @import "objects/_animations";
+
 /**
  * Layouts. (namespace: l-)
  *
@@ -107,6 +109,7 @@
 @import "components/_buttons";
 @import "components/_features";
 @import "components/_testimonials";
+@import "components/_modal";
 
 /**
  * Patterns. (namespace: p-)

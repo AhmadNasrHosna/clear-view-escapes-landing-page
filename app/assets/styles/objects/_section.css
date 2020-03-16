@@ -5,9 +5,9 @@
 
   &__head {
     text-align: center; // fallback for legacy browsers
-  }
 
-  .c-icon--inline { margin-right: var(--s0); }
+    .c-icon--inline { margin-right: var(--s0); }
+  }
 
   &__title,
   &__subtitle {

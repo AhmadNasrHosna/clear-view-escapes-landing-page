@@ -17,7 +17,6 @@ class StickyHeader {
     this.handleScrollspyNavbar(this.currentScrollFrom("top"));
   }
 
-
   handleHeaderStyles(stylesClass, startingThreshold, scrollFromEdge) {
     let currentScroll = scrollFromEdge;
 
@@ -59,7 +58,6 @@ class StickyHeader {
 
   currentScrollFrom(edge) {
     let currentScroll = window.pageYOffset;
-
     let viewportTopEdge = currentScroll;
     let viewportBottomEdge = currentScroll + document.documentElement.clientHeight;
 
