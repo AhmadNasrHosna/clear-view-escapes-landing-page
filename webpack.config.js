@@ -5,6 +5,17 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const fse = require('fs-extra');
+const srcDir = './src/';
+const buildDir = './docs/';
+const paths = {
+  jsSRC: srcDir + 'assets/scripts/App.js',
+  jsDIST: 'assets/scripts/',
+  cssDIST: 'assets/styles/',
+  imagesSRC: srcDir + 'assets/images',
+  imagesDIST: buildDir + 'assets/images',
+  fontsSRC: srcDir + 'assets/fonts',
+  fontsDIST: buildDir + 'assets/fonts'
+}
 
 const postCSSPlugins = [
   require('postcss-import'),
@@ -25,16 +36,20 @@ const postCSSPlugins = [
 class RunAfterCompile {
   apply(compiler) {
     compiler.hooks.done.tap('Copy Files', () => {
-      fse.copySync('./app/assets/images', './dist/assets/images');
-      fse.copySync('./app/assets/fonts', './dist/assets/fonts');
+      fse.copySync(paths.imagesSRC, paths.imagesDIST);
+      fse.copySync(paths.fontsSRC, paths.fontsDIST);
     })
   }
 }
 
 let cssConfig = {
   test: /\.css$/i,
-  use: [
-    'css-loader?url=false', //2. Turns css into common js
+  use: [{
+      loader: 'css-loader',
+      options: {
+        url: false
+      }
+    }, //2. Turns css into common js
     {
       loader: 'postcss-loader', //1. Turns postCSS into regular css
       options: {
@@ -45,13 +60,12 @@ let cssConfig = {
   ]
 }
 
-let pages = fse.readdirSync('./app')
+let pages = fse.readdirSync(srcDir)
   .filter(file => file.endsWith('.html'))
   .map(page => {
     return new HtmlWebpackPlugin({ // grabs html file
       filename: `./${page}`, // relative to root of the application
-      template: `./app/${page}`, // grabs from
-      inject: true,
+      template: srcDir + page, // grabs from
       minify: { // minifies it
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -63,7 +77,7 @@ let pages = fse.readdirSync('./app')
 // SHARED: =======================
 
 let config = {
-  entry: './app/assets/scripts/App.js',
+  entry: paths.jsSRC,
   module: {
     rules: [
       cssConfig,
@@ -96,13 +110,13 @@ if (currentTask == "dev") {
   config.mode = 'development';
   config.output = {
     filename: 'bundled.js',
-    path: path.resolve(__dirname, 'app')
+    path: path.resolve(__dirname, srcDir)
   }
   cssConfig.use.unshift('style-loader'); //3. Inject styles into DOM
   // Webpack Dev Server
   config.devServer = {
-    before: (app, server) => server._watch('./app/**/*.html'),
-    contentBase: path.join(__dirname, 'app'),
+    before: (app, server) => server._watch(srcDir + '**/*.html'),
+    contentBase: path.join(__dirname, srcDir),
     hot: true,
     port: 3000,
     host: '0.0.0.0'
@@ -110,7 +124,7 @@ if (currentTask == "dev") {
   config.plugins.push(
     new StylelintPlugin({
       configFile: '.stylelintrc.json',
-      context: 'app',
+      context: srcDir,
       files: '**/*.css',
       syntax: 'scss',
       failOnError: false,
@@ -127,9 +141,9 @@ if (currentTask == "build") {
   cssConfig.use.unshift(MiniCSSExtractPlugin.loader); //3. Extract css into files
   postCSSPlugins.push(require('cssnano'));
   config.output = {
-    filename: 'assets/scripts/[name].[chunkhash].js',
-    chunkFilename: 'assets/scripts/[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: paths.jsDIST + '[name].[chunkhash].js',
+    chunkFilename: paths.jsDIST + '[name].[chunkhash].js',
+    path: path.resolve(__dirname, buildDir)
 
   }
   config.module.rules.push({
@@ -148,7 +162,7 @@ if (currentTask == "build") {
   config.plugins.push(
     new CleanWebpackPlugin(),
     new MiniCSSExtractPlugin({
-      filename: "assets/styles/styles.[chunkhash].css"
+      filename: paths.cssDIST + "main.[chunkhash].css"
     }),
     new RunAfterCompile()
   )
