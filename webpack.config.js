@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const fse = require('fs-extra');
 const srcDir = './src/';
-const buildDir = './docs/';
+const buildDir = './dist/';
 const paths = {
   jsSRC: srcDir + 'assets/scripts/App.js',
   jsDIST: 'assets/scripts/',
