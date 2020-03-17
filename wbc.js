@@ -2,6 +2,8 @@ const currentTask = process.env.npm_lifecycle_event;
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const fse = require('fs-extra');
@@ -24,7 +26,7 @@ const postCSSPlugins = [
 
 class RunAfterCompile {
   apply(compiler) {
-    compiler.hooks.done.tap('Copy Files', () => {
+    compiler.hooks.done.tap('Copy Images', () => {
       fse.copySync('./app/assets/images', './dist/assets/images');
       fse.copySync('./app/assets/fonts', './dist/assets/fonts');
     })
@@ -39,7 +41,8 @@ let cssConfig = {
       loader: 'postcss-loader', //1. Turns postCSS into regular css
       options: {
         parser: require('postcss-comment'),
-        plugins: postCSSPlugins
+        plugins: postCSSPlugins,
+        sourceMap: true
       }
     }
   ]
@@ -51,7 +54,6 @@ let pages = fse.readdirSync('./app')
     return new HtmlWebpackPlugin({ // grabs html file
       filename: `./${page}`, // relative to root of the application
       template: `./app/${page}`, // grabs from
-      inject: true,
       minify: { // minifies it
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -71,19 +73,17 @@ let config = {
       //   test: /\.(woff|woff2|eot|ttf|svg)$/,
       //   loader: 'file-loader',
       //   options: {
-      //     name: '[name].[ext]',
-      //     publicPath: 'fonts'
-      //   }
+      //     name: 'fonts/[name].[ext]',
+      //     publicPath: '/'
+      //   },
       // },
       // {
       //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   use: {
-      //     loader: "file-loader",
-      //     options: {
-      //       name: "[name].[ext]",
-      //       outputPath: "images"
-      //     }
-      //   }
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: 'img/[name].[ext]',
+      //     publicPath: '/'
+      //   },
       // }
     ]
   },
@@ -96,7 +96,7 @@ if (currentTask == "dev") {
   config.mode = 'development';
   config.output = {
     filename: 'bundled.js',
-    path: path.resolve(__dirname, 'app')
+    path: path.resolve(__dirname, 'dist')
   }
   cssConfig.use.unshift('style-loader'); //3. Inject styles into DOM
   // Webpack Dev Server
@@ -125,12 +125,10 @@ if (currentTask == "dev") {
 if (currentTask == "build") {
   config.mode = 'production';
   cssConfig.use.unshift(MiniCSSExtractPlugin.loader); //3. Extract css into files
-  postCSSPlugins.push(require('cssnano'));
   config.output = {
     filename: 'assets/scripts/[name].[chunkhash].js',
     chunkFilename: 'assets/scripts/[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist')
-
+    path: path.resolve(__dirname, 'dist'),
   }
   config.module.rules.push({
     test: /\.js$/,
@@ -143,7 +141,12 @@ if (currentTask == "build") {
     }
   });
   config.optimization = {
-    splitChunks: { chunks: "all" }
+    splitChunks: { chunks: "all" },
+    minimizer: [
+      // CSS minification
+      new OptimizeCssAssetsPlugin({ cssProcessor: require('clean-css') }),
+      new TerserPlugin() // JS default minification
+    ]
   }
   config.plugins.push(
     new CleanWebpackPlugin(),
