@@ -1,12 +1,12 @@
 const currentTask = process.env.npm_lifecycle_event;
 const path = require('path');
-const fse = require('fs-extra');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const fse = require('fs-extra');
 
 const postCSSPlugins = [
   require('postcss-import'),
@@ -27,7 +27,8 @@ const postCSSPlugins = [
 class RunAfterCompile {
   apply(compiler) {
     compiler.hooks.done.tap('Copy Images', () => {
-      fse.copySync('./app/assets/images', './dist/assets/images')
+      fse.copySync('./app/assets/images', './dist/assets/images');
+      fse.copySync('./app/assets/fonts', './dist/assets/fonts');
     })
   }
 }
@@ -35,12 +36,13 @@ class RunAfterCompile {
 let cssConfig = {
   test: /\.css$/i,
   use: [
-    'css-loader', //2. Turns css into common js
+    'css-loader?url=false', //2. Turns css into common js
     {
       loader: 'postcss-loader', //1. Turns postCSS into regular css
       options: {
         parser: require('postcss-comment'),
-        plugins: postCSSPlugins
+        plugins: postCSSPlugins,
+        sourceMap: true
       }
     }
   ]
@@ -50,7 +52,7 @@ let pages = fse.readdirSync('./app')
   .filter(file => file.endsWith('.html'))
   .map(page => {
     return new HtmlWebpackPlugin({ // grabs html file
-      filename: page, // name of the file
+      filename: `./${page}`, // relative to root of the application
       template: `./app/${page}`, // grabs from
       minify: { // minifies it
         removeAttributeQuotes: true,
@@ -66,10 +68,51 @@ let config = {
   entry: './app/assets/scripts/App.js',
   module: {
     rules: [
-      cssConfig
+      cssConfig,
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|svg)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: 'fonts/[name].[ext]',
+      //     publicPath: '/'
+      //   },
+      // },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: 'img/[name].[ext]',
+      //     publicPath: '/'
+      //   },
+      // }
+
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './images/',
+              publicPath: './images/'
+            }
+          },
+          'url-loader?limit=100000'
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './fonts/',
+            publicPath: './fonts/'
+          }
+        }]
+      }
     ]
   },
-  plugins: []
+  plugins: pages
 }
 
 // DEVELOPMENT Configuration: =======================
@@ -108,10 +151,20 @@ if (currentTask == "build") {
   config.mode = 'production';
   cssConfig.use.unshift(MiniCSSExtractPlugin.loader); //3. Extract css into files
   config.output = {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'assets/scripts/[name].[chunkhash].js',
+    chunkFilename: 'assets/scripts/[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist'),
   }
+  config.module.rules.push({
+    test: /\.js$/,
+    exclude: /(node_modules)/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  });
   config.optimization = {
     splitChunks: { chunks: "all" },
     minimizer: [
@@ -122,9 +175,10 @@ if (currentTask == "build") {
   }
   config.plugins.push(
     new CleanWebpackPlugin(),
-    new MiniCSSExtractPlugin({ filename: "styles.[chunkhash].css" }),
-    new RunAfterCompile(),
-    ...pages
+    new MiniCSSExtractPlugin({
+      filename: "assets/styles/styles.[chunkhash].css"
+    }),
+    new RunAfterCompile()
   )
 }
 

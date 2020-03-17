@@ -1,7 +1,11 @@
 .p-footer {
-  background-color: var(--color-brand-primary);
+
+  //background-color: var(--color-brand-primary);
+  background: url(assets/images/testimonials-bg.jpg) top no-repeat;
+  background-size: cover;
   color: #fff;
   padding: var(--s1) 0;
+
 
   &__copyrights-text {
     font-weight: 200;
