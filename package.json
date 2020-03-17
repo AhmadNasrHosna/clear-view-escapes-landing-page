@@ -23,11 +23,14 @@
     "html-loader": "^0.5.5",
     "lazysizes": "^5.2.0",
     "lodash": "^4.17.15",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "clean-css": "^4.2.3",

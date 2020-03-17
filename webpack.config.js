@@ -81,24 +81,16 @@ let config = {
   module: {
     rules: [
       cssConfig,
-      // {
-      //   test: /\.(woff|woff2|eot|ttf|svg)$/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: '[name].[ext]',
-      //     publicPath: 'fonts'
-      //   }
-      // },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   use: {
-      //     loader: "file-loader",
-      //     options: {
-      //       name: "[name].[ext]",
-      //       outputPath: "images"
-      //     }
-      //   }
-      // }
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env']
+          }
+        }
+      }
     ]
   },
   plugins: pages
@@ -146,16 +138,6 @@ if (currentTask == "build") {
     path: path.resolve(__dirname, buildDir)
 
   }
-  config.module.rules.push({
-    test: /\.js$/,
-    exclude: /(node_modules)/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env']
-      }
-    }
-  });
   config.optimization = {
     splitChunks: { chunks: "all" }
   }
