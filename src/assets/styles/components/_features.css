@@ -1,21 +1,20 @@
 .c-features {
-  /* === Layout fallback for old browsers === */
-  margin-right: -25px;
-  @mixin clearfix;
+  /* === CSS Grid fallback for old browsers === */
+    @mixin bp md { margin-right: calc(var(--layout-gap) * -1); }
+    display: flex;
+    flex-wrap: wrap;
   /* === */
 
-  /* === Layout fallback override === */
   @supports (display: grid) {
+  /* === fallback override === */
     margin-right: 0;
-    @mixin clearfix-override;
   /* === */
 
     display: grid;
-    grid-gap: var( --s1); @mixin bp xs {
-    grid-gap: var( --s3); }
+    grid-gap: var(--layout-gap);
 
-    @mixin bp sm {
-      grid-template-columns: repeat(auto-fit, minmax(rem(250px), 1fr));
+    @mixin bp md {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
@@ -45,29 +44,26 @@
 
   &:nth-of-type(4):before { content: "s"; }
 
-  /* === Layout fallback for old browsers === */
-  &:not(:last-child) { margin-bottom: rem(25px); }
+  /* === CSS Grid fallback for old browsers === */
+  &:not(:last-child) { margin-bottom: var(--layout-gap); }
 
   @mixin bp md   {
-    width: calc(50% - 25px);
-    float: inline-start;
-    margin-right: 25px;
-    height: 340px;
+    &:nth-of-type(3) { margin-bottom: 0; }
+
+    margin-right: var(--layout-gap);
+    flex-basis: calc(50% - var(--layout-gap));
+    max-width: calc(50% - var(--layout-gap));
   }
   /* === */
 
-  /* === Layout fallback override === */
   @supports (display: grid) {
-    &:not(:last-child) { margin-bottom: 0; }
-
+    /* === CSS Grid fallback override === */
     @mixin bp md {
-      width: auto;
-      float: none;
-      margin-right: 0;
-      height: auto;
+      margin: 0 !important;
+      max-width: initial;
     }
+    /* === */
   }
-  /* === */
 
   padding: rem(30px 20px);
   border-radius: 12px;

@@ -73,24 +73,39 @@
   //==============================================================================
 
   // Modular Scale
-  --base-scale-size-xs: rem(10.5px);
-  --base-scale-size-sm: rem(12.5px);
-  --base-scale-size-md: rem(14px);
-  --base-scale-size-lg: rem(16px);
+   $base-scale-size-xs: rem(10.5px);
+   $base-scale-size-sm: rem(12.5px);
+   $base-scale-size-md: rem(14px);
+   $base-scale-size-lg: rem(16px);
+
+  --base-scale-size-xs: $base-scale-size-xs;
+  --base-scale-size-sm: $base-scale-size-sm;
+  --base-scale-size-md: $base-scale-size-md;
+  --base-scale-size-lg: $base-scale-size-lg;
 
   --ratio: 1.4; // The ratio number
+
+  // $s0 and --s0 are the base scale size (mobile-first)
+   $s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
+   $s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
+   $s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
+   $s0: var(--base-scale-size-lg) } @supports (--css: variables) {
+  --s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
+  --s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
+  --s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
+  --s0: var(--base-scale-size-lg) }
+   }
+
   --s-6: calc(var(--s-5) / var(--ratio));
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
   --s-2: calc(var(--s-1) / var(--ratio));
-  --s-1:  calc(var(--s0) / var(--ratio));
-  // --s0 is the base scale size (mobile-first)
-  --s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
-  --s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
-  --s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
-  --s0: var(--base-scale-size-lg) }
-  --s1: calc(var(--s0) * var(--ratio));
+  --s-1:  calc( $s0 / var(--ratio)); /* Fallback or IE11 */  @supports (--css: varibales) {
+  --s-1:  calc(var(--s0) / var(--ratio)); }
+
+  --s1: calc( $s0 * var(--ratio)); /* Fallback or IE11 */  @supports (--css: varibales) {
+  --s1: calc(var(--s0) * var(--ratio)); }
   --s2: calc(var(--s1) * var(--ratio));
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
@@ -143,7 +158,7 @@
   --transition-global            : all var(--transition-duration-global) var(--transition-timing-func-global);
 
   //==============================================================================
-  // Transitions
+  // Shadows
   //==============================================================================
 
   --box-shadow-global: 0 3px 7px rgba(0, 0, 0, .2);
@@ -156,4 +171,38 @@
   --zi-popover: 4;
   --zi-fixed-element: 5;
   --zi-overlay: 10; // modals and dialogs
+
+  //==============================================================================
+  // Spacings
+  //==============================================================================
+
+  --layout-gap: var(--s1); @media (min-width: $bp-md) {
+  --layout-gap: var(--s3); }
 }
+
+
+/* // Modular Scale
+$base-scale-size-xs: rem(10.5px);
+$base-scale-size-sm: rem(12.5px);
+$base-scale-size-md: rem(14px);
+$base-scale-size-lg: rem(16px);
+--ratio: 1.4; // The ratio number
+// $s0 is the base scale size (mobile-first)
+$s0: $base-scale-size-xs;  @media (min-width: $bp-sm) {
+$s0: $base-scale-size-sm } @media (min-width: $bp-md) {
+$s0: $base-scale-size-md } @media (min-width: $bp-lg) {
+$s0: $base-scale-size-lg }
+
+--s-6: calc($s0 / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+--s-5: calc($s0 / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+--s-4: calc($s0 / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+--s-3: calc($s0 / var(--ratio) / var(--ratio) / var(--ratio));
+--s-2: calc($s0 / var(--ratio) / var(--ratio));
+--s-1: calc($s0 / var(--ratio));
+
+--s1: calc($s0 * var(--ratio));
+--s2: calc($s0 * var(--ratio) * var(--ratio));
+--s3: calc($s0 * var(--ratio) * var(--ratio) * var(--ratio));
+--s4: calc($s0 * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+--s5: calc($s0 * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+--s6: calc($s0 * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio)); */

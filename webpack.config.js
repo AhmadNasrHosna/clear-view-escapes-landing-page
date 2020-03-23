@@ -30,7 +30,10 @@ const postCSSPlugins = [
   require('postcss-rem')({
     baseline: 10, // Default to 16
     precision: 3 // Default to 5
-  })
+  }),
+  require("postcss-calc")({
+    precision: 3
+  }),
 ];
 
 class RunAfterCompile {

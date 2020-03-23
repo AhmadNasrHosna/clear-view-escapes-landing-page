@@ -1,7 +1,7 @@
 :root {
-  --primary: #fff;
-  --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
-  --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
+  --c-hamburger-color: var(--color-brand-primary);
+  --c-hamburger-bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
+  --c-hamburger-ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
 }
 
 .p-header {
@@ -45,7 +45,7 @@
     transition: var(--transition-global);
 
     &:focus {
-      box-shadow: 0 0 0 6px color-mod(var(--color-brand-primary) a(45%));
+      box-shadow: 0 0 0 6px color-mod(var(--color-brand-primary) a(25%));
     }
 
     circle {
@@ -53,7 +53,7 @@
       width: 100%;
       height: 100%;
       fill: none;
-      stroke: var(--primary);
+      stroke: var(--c-hamburger-color);
       stroke-width: calc(var(--weight) * 0.6);
       stroke-dasharray: 284;
       stroke-dashoffset: 284;
@@ -77,15 +77,15 @@
         width: 100%;
         height: var(--weight);
         border-radius: 0.3em;
-        background: var(--primary);
+        background: var(--c-hamburger-color);
         transform-origin: right;
-        transition: var(--bounce) 0.1s;
+        transition: var(--c-hamburger-bounce) 0.1s;
       }
 
       .center {
         right: 0;
         transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
-          width var(--ease) 0.15s;
+          width var(--c-hamburger-ease) 0.15s;
       }
 
       &::before {
@@ -100,6 +100,8 @@
     }
 
     header.drawer-is-visible & {
+      background-color: color-mod(#fff a(.15));
+
       circle {
         stroke-dashoffset: 0;
         transition-delay: 0.12s;
@@ -110,7 +112,7 @@
         &::after {
           --tx: -15%;
           --rt: 45deg;
-          transition: var(--bounce) 0.1s;
+          transition: var(--c-hamburger-bounce) 0.1s;
         }
 
         &::before {
@@ -121,7 +123,7 @@
         .center {
           width: 0;
           right: calc(var(--size) * -0.16); // 63% * -0.16 // -0.16 ==  -16% to right
-          transition: width var(--ease) 0.1s, right var(--bounce);
+          transition: width var(--c-hamburger-ease) 0.1s, right var(--c-hamburger-bounce);
         }
       }
     }
