@@ -11,39 +11,29 @@
  */
 
 img {
-  /**
-   * [1] max-width: 100%; 
-   * [2] font-style: italic; 
-   * [3] vertical-align: middle; 
-   * 
+	/**
+   * [1] max-width: 100%;
+   * [2] font-style: italic;
+   * [3] vertical-align: middle;
+   *
    * Declared before in 'generic/_shared.css'
    */
-   
-  transition: 0.3s ease-out;
 
-  @media (prefers-color-scheme: dark) {
-    opacity: 0.65;
+	transition: 0.3s ease-out;
 
-    &:hover {
-      opacity: 1;
-    }
-  }
+	@media (prefers-color-scheme: dark) {
+		opacity: 0.65;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 // In case you don't have control over generated `width` and `height` attributes
-// on `<img>` elements in your markup, but still want the images to be fluid,
-// set this to `false`.
+// on `<img>` elements in your markup, but still want the images to be fluidز
 
-$inuit-static-images: true !default;
-
-@if ($inuit-static-images == true) {
-  /**
-   * If a `width` and/or `height` attribute has been explicitly defined, let�s
-   * not make the image fluid.
-   */
-
-  img[width],
-  img[height] {
-    max-width: none;
-  }
+img[width],
+img[height] {
+	max-width: none;
 }
