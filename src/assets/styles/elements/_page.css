@@ -24,8 +24,8 @@ body {
   background : var(--color-bg-primary);
   color      : var(--color-text-global);
   line-height: var(--line-height-md);  /* [1] */
-  font-size  : rem(16px); // fallback font size for all screens
-  font-size  : var(--font-size-global); /* [1] */
+  font-size  : $font-size-global; @supports (--css: varibales) {
+  font-size  : var(--font-size-global); } /* [1] */
   font-family: var(--font-family-plain);
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;

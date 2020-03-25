@@ -33,7 +33,7 @@ const postCSSPlugins = [
   }),
   require("postcss-calc")({
     precision: 3
-  }),
+  })
 ];
 
 class RunAfterCompile {

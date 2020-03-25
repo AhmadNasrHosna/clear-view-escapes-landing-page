@@ -58,8 +58,10 @@
 
   @supports (display: grid) {
     /* === CSS Grid fallback override === */
+    &:not(:last-child) { margin-bottom: 0; }
+
     @mixin bp md {
-      margin: 0 !important;
+      margin-right: 0;
       max-width: initial;
     }
     /* === */
@@ -73,7 +75,8 @@
   text-align: center;
 
   &__title {
-    font-size: var(--s2);
+    font-size: var(--s3);  @mixin bp md {
+    font-size: var(--s2);}
     font-weight: 300;
     line-height: var(--line-height-sm);
     font-family: var(--font-family-special);

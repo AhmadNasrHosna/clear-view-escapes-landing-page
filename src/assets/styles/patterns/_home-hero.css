@@ -3,6 +3,11 @@
 	border-bottom: 10px solid var(--color-brand-primary);
 	box-shadow: var(--box-shadow-global);
 
+	img {
+		user-select: none;
+		-webkit-user-drag: none;
+	}
+
 	&__content {
 		position: absolute;
 		width: 100%;
@@ -22,9 +27,8 @@
 	}
 
 	&__title {
-		font-size: calc(var(--s4) + var(--s0));
+		font-size: calc(var(--s4) + 1.6rem);
 		font-weight: 500;
-
 	}
 
 	&__subtitle {

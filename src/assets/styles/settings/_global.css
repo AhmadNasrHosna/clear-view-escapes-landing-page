@@ -85,40 +85,39 @@
 
   --ratio: 1.4; // The ratio number
 
-  // $s0 and --s0 are the base scale size (mobile-first)
-   $s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
-   $s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
-   $s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
-   $s0: var(--base-scale-size-lg) } @supports (--css: variables) {
-  --s0: var(--base-scale-size-xs);  @media (min-width: $bp-sm) {
-  --s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
-  --s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
-  --s0: var(--base-scale-size-lg) }
-   }
+    --s-6: calc(var(--s-5) / var(--ratio));
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
 
-  --s-6: calc(var(--s-5) / var(--ratio));
-  --s-5: calc(var(--s-4) / var(--ratio));
-  --s-4: calc(var(--s-3) / var(--ratio));
-  --s-3: calc(var(--s-2) / var(--ratio));
-  --s-2: calc(var(--s-1) / var(--ratio));
-  --s-1:  calc( $s0 / var(--ratio)); /* Fallback or IE11 */  @supports (--css: varibales) {
-  --s-1:  calc(var(--s0) / var(--ratio)); }
+    // --s0 is the base scale size (mobile-first)
+    --s0: var(--base-scale-size-xs); @media (min-width: $bp-sm) {
+    --s0: var(--base-scale-size-sm) } @media (min-width: $bp-md) {
+    --s0: var(--base-scale-size-md) } @media (min-width: $bp-lg) {
+    --s0: var(--base-scale-size-lg) }
 
-  --s1: calc( $s0 * var(--ratio)); /* Fallback or IE11 */  @supports (--css: varibales) {
-  --s1: calc(var(--s0) * var(--ratio)); }
-  --s2: calc(var(--s1) * var(--ratio));
-  --s3: calc(var(--s2) * var(--ratio));
-  --s4: calc(var(--s3) * var(--ratio));
-  --s5: calc(var(--s4) * var(--ratio));
-  --s6: calc(var(--s5) * var(--ratio));
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+    --s6: calc(var(--s5) * var(--ratio));
+
 
   // Font-size
-  --font-size-base     : 62.5%; // 10px
+  --font-size-base     : 62.5%; // 10px .. relative to <html> element
+
+   $font-size-global: rem(15px);   @media (min-width: $bp-sm) {
+   $font-size-global: rem(16px); } @media (min-width: $bp-md) {
+   $font-size-global: rem(17px); } @supports (--css: varibales) {
   --font-size-global: rem(15px);   @media (min-width: $bp-sm) {
   --font-size-global: rem(16px); } @media (min-width: $bp-md) {
-  --font-size-global: rem(17px); }
+  --font-size-global: rem(17px); } } /* why this pattern?
+                                      * To make PostCSS stop providing fallback to custom properties. It provide the compiled code with fallback to the first custom property outside scope of the @media rule for all breakpoints!, and then we get the fixed values using $ SASS Variables as fallback for older browser. */
 
-  // Font-family
+    // Font-family
   --font-family-plain  : "Inter", system-ui;
   --font-family-special: "bluu_nextbold_italic", serif;
   --font-family-mono   : "Consolas", "Lucida Console", Menlo, Monaco, monospace;
@@ -176,8 +175,7 @@
   // Spacings
   //==============================================================================
 
-  --layout-gap: var(--s1); @media (min-width: $bp-md) {
-  --layout-gap: var(--s3); }
+  --layout-gap: var(--s3);
 }
 
 
