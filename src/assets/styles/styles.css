@@ -93,6 +93,7 @@
  */
 
  @import "layouts/_flow";
+  @import "layouts/_features";
  @import "layouts/_testimonials";
  @import "layouts/_header";
  @import "layouts/_section";

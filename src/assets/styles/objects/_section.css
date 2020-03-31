@@ -6,7 +6,10 @@
   &__head {
     text-align: center; // fallback for legacy browsers
 
-    .c-icon--inline { margin-right: var(--s0); }
+    img {
+      margin: 0 0 rem(16px) 0; @mixin bp sm {
+      margin: 0 rem(16px) 0 0;  }
+    }
   }
 
   &__title,

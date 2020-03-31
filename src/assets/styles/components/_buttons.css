@@ -50,8 +50,9 @@
 .c-button {
   // Button base styles
   min-width       : rem(100px);
-  display         : inline-block;
-  text-align      : center;
+  display         : inline-flex;
+  justify-content : center;
+  align-items     : center;
   cursor          : pointer;
   white-space     : nowrap;
   line-height     : 1;
@@ -62,8 +63,7 @@
   border          : var(--border-btn-base-width) var(--border-btn-base-style) transparent;
   transition      :
     box-shadow       var(--transition-duration-global),
-    background-color var(--transition-duration-global)
-                    var(--transition-timing-func-global);
+    background-color var(--transition-duration-global) var(--transition-timing-func-global);
 
 
   // Button on active
