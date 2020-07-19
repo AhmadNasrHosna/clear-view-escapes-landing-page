@@ -3,4 +3,4 @@ Responsive HTML landing page can help showcase services, applications or product
 
 View on Netlify: https://travel-site-webpack.netlify.app/
 
-![](/src/assets/imagestswebpack-banner.png)
+![](/src/assets/images/tswebpack-banner.png)
