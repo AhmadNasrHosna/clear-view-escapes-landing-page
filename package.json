@@ -21,7 +21,7 @@
   "homepage": "https://github.com/ahmedhosna95/travel-site-workflow-updated#readme",
   "dependencies": {
     "html-loader": "^0.5.5",
-    "lazysizes": "^5.2.0",
+    "lazysizes": "^5.2.1",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
     "react": "^16.13.0",
